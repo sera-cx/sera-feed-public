@@ -1,0 +1,863 @@
+{
+  "version": 1,
+  "date": "2026-06-11",
+  "generatedAt": "2026-06-11T17:22:05.362Z",
+  "enrichment": "ai",
+  "brief": {
+    "headline": "The ECB blinks first as war inflation goes global",
+    "summary": "The European Central Bank raised rates for the first time since 2023 — the first major central bank to move since the US-Iran war sent energy prices surging — and officials are already hinting at another rise in July. The dollar stays firm on safe-haven demand and hot US producer prices, while the World Bank cut its global growth forecast to a post-COVID low of 2.5%. The yen is the one to watch: pinned near 160.50 with traders betting on a Bank of Japan hike Tuesday and Tokyo's intervention finger hovering. Risk currencies like the Aussie and most African and Asian currencies remain under pressure, and the pound has UK political turmoil plus Friday's GDP data to digest.",
+    "pairsToWatch": [
+      {
+        "pair": "EUR/USD",
+        "note": "Post-hike follow-through, with ECB officials floating another move in July."
+      },
+      {
+        "pair": "USD/JPY",
+        "note": "Stuck near 160.50 — BoJ decision Tuesday and intervention risk cap the upside."
+      },
+      {
+        "pair": "GBP/USD",
+        "note": "Defence secretary's resignation plus Friday GDP data make it a heavy 24 hours for sterling."
+      },
+      {
+        "pair": "AUD/USD",
+        "note": "The market's risk gauge, sitting at two-month lows."
+      }
+    ],
+    "calendar": [
+      "UK monthly GDP data due Friday morning",
+      "Bank of Japan decision expected Tuesday — a 25bp hike is widely tipped",
+      "US Federal Reserve meets next week",
+      "US-Iran headlines remain the wildcard — energy prices are the swing factor"
+    ],
+    "spendIdea": "Father's Day is ten days out (21 June) — Esquire's tested gift list plus a rare $15-off Nintendo Switch 2 deal at Woot cover dad and the family without blowing the budget.",
+    "transferTip": "With the BoJ on Tuesday, the Fed next week and war headlines moving rates hour to hour, avoid locking in big transfers right around central bank announcements — quieter windows usually price better."
+  },
+  "categories": [
+    {
+      "id": "world",
+      "label": "World News",
+      "priority": 1,
+      "emoji": "🌍",
+      "description": "Geopolitics, elections, trade and conflict — the world events that move currencies."
+    },
+    {
+      "id": "central-banks",
+      "label": "Central Banks",
+      "priority": 2,
+      "emoji": "🏛️",
+      "description": "Rate decisions, interventions, QE and speeches from central banks anywhere in the world."
+    },
+    {
+      "id": "fx-analysis",
+      "label": "FX Analysis",
+      "priority": 3,
+      "emoji": "📈",
+      "description": "Daily currency commentary and forecasts from banks and research desks."
+    },
+    {
+      "id": "markets",
+      "label": "Market Movers",
+      "priority": 4,
+      "emoji": "⚡",
+      "description": "Economic data, commodities and risk sentiment with a direct line to FX."
+    },
+    {
+      "id": "life",
+      "label": "Life & Money",
+      "priority": 5,
+      "emoji": "🎁",
+      "description": "Spend it well — gifts for loved ones, new tech worth buying, and travel where your money goes further."
+    }
+  ],
+  "items": [
+    {
+      "id": "b4c0a6bc9398",
+      "category": "world",
+      "headline": "US threatens further strikes on Iran and seizure of Kharg Island fuel hub",
+      "summary": "President Trump warned of a 'very hard' attack on Iran tonight and said the US would take control of the Kharg Island oil hub, as the ceasefire appears close to collapse.",
+      "whyItMatters": "Escalation pushes oil higher and money into safe havens, lifting the dollar and pressuring riskier currencies.",
+      "currencies": [
+        "USD",
+        "CHF"
+      ],
+      "impact": "bullish",
+      "fxRelevance": 95,
+      "region": "Global",
+      "tags": [
+        "iran",
+        "oil",
+        "geopolitics",
+        "safe-haven"
+      ],
+      "source": {
+        "name": "The Guardian World",
+        "url": "https://www.theguardian.com/world/live/2026/jun/11/iran-war-news-us-strikes-donald-trump-stalled-peace-talks-middle-east-crisis"
+      },
+      "publishedAt": "2026-06-11T16:40:20.000Z",
+      "imageUrl": "https://i.guim.co.uk/img/media/ca44eae90cb40a5537c665c6d7d895e52ae8e977/350_0_4723_3777/master/4723.jpg?width=140&quality=85&auto=format&fit=max&s=62845779cc8376529cb27ee74820440e"
+    },
+    {
+      "id": "a44ce1f852ac",
+      "category": "world",
+      "headline": "World Bank cuts global growth forecast to 2.5% on war and energy costs",
+      "summary": "The World Bank lowered its global growth forecast to a post-COVID low of 2.5%, blaming surging energy prices, inflation and higher borrowing costs from the US-Iran war.",
+      "whyItMatters": "Slower global growth and dearer borrowing typically hit emerging-market currencies hardest while supporting the dollar.",
+      "currencies": [
+        "USD"
+      ],
+      "impact": "bullish",
+      "fxRelevance": 85,
+      "region": "Global",
+      "tags": [
+        "growth",
+        "world-bank",
+        "inflation"
+      ],
+      "source": {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/economy/2026/6/11/global-growth-to-slow-to-lowest-since-covid-due-to-iran-war-world-bank?traffic_source=rss"
+      },
+      "publishedAt": "2026-06-11T16:55:16.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "ff0df2b7bff2",
+      "category": "world",
+      "headline": "UK defence secretary resigns, deepening pressure on Starmer's government",
+      "summary": "John Healey quit over defence funding with a scathing letter, and opposition parties say the premiership is 'falling apart' as Labour figures also demand higher spending.",
+      "whyItMatters": "Political instability and looser spending promises tend to weigh on the pound until the picture clears.",
+      "currencies": [
+        "GBP"
+      ],
+      "impact": "bearish",
+      "fxRelevance": 75,
+      "region": "UK",
+      "tags": [
+        "uk-politics",
+        "fiscal",
+        "starmer"
+      ],
+      "source": {
+        "name": "The Guardian World",
+        "url": "https://www.theguardian.com/politics/live/2026/jun/11/belfast-riots-hilary-benn-anti-immigrant-injured-police-latest-news-updates"
+      },
+      "publishedAt": "2026-06-11T16:59:33.000Z",
+      "imageUrl": "https://i.guim.co.uk/img/media/2183213bd4da74ac195bae6c04b812915541d15b/0_1223_3406_2725/master/3406.jpg?width=140&quality=85&auto=format&fit=max&s=012c1de2909326b87215245823b4b8d5"
+    },
+    {
+      "id": "e887a3f66e8e",
+      "category": "world",
+      "headline": "US House lets key FISA surveillance power head toward expiry",
+      "summary": "The House blocked a short-term extension of Section 702 spying powers, leaving the intelligence tool set to lapse amid a Republican revolt.",
+      "whyItMatters": "Washington gridlock is a background dollar risk markets mostly shrug off — until it spreads to spending bills.",
+      "currencies": [
+        "USD"
+      ],
+      "impact": "neutral",
+      "fxRelevance": 35,
+      "region": "US",
+      "tags": [
+        "us-politics",
+        "congress"
+      ],
+      "source": {
+        "name": "The Guardian World",
+        "url": "https://www.theguardian.com/us-news/live/2026/jun/11/democrats-republicans-midterms-tech-laws-scotus-latest-news-updates"
+      },
+      "publishedAt": "2026-06-11T16:48:45.000Z",
+      "imageUrl": "https://i.guim.co.uk/img/media/f6287da7fd9bd90a7b12e08e76992e99d8a890bc/0_0_4583_3667/master/4583.jpg?width=140&quality=85&auto=format&fit=max&s=a4410cf1247c60d23748a3cc90d244f1"
+    },
+    {
+      "id": "e088c5a4e67b",
+      "category": "central-banks",
+      "headline": "ECB becomes first major central bank to raise rates since the war began",
+      "summary": "The European Central Bank lifted rates by 25bp, its first hike since 2023, moving ahead of peers to fight inflation stoked by the Iran conflict's energy shock.",
+      "whyItMatters": "Higher euro rates ahead of the Fed narrow the gap that has weighed on the euro — a clear euro-positive surprise.",
+      "currencies": [
+        "EUR",
+        "USD"
+      ],
+      "impact": "bullish",
+      "fxRelevance": 95,
+      "region": "Eurozone",
+      "tags": [
+        "ecb",
+        "rate-hike",
+        "inflation"
+      ],
+      "source": {
+        "name": "Google News — Central Banks",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQNDlmM0U3cjRZTkhGal8ySmVWR3Uzd1p1bkpwVEs4RWo0UDd6Nnh5TDFPLW9WV1JqQTBIU3JfbzB5X2dHQmhYNGRWUkEtWU8yUFVwWEtlT3Q4d0QzYWV2OFdhRnlBN3RnTzZiZURtaEhBU3ZzQnU5WmtEcnk2b083ckxEbDNIeDV1?oc=5"
+      },
+      "publishedAt": "2026-06-11T16:58:50.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "3a59de84bb7d",
+      "category": "central-banks",
+      "headline": "ECB officials signal another rate rise could come as soon as July",
+      "summary": "Policymakers indicated the next increase may follow at the July meeting if war-driven inflation pressure persists.",
+      "whyItMatters": "A faster ECB path would keep supporting the euro against currencies whose central banks stay on hold.",
+      "currencies": [
+        "EUR"
+      ],
+      "impact": "bullish",
+      "fxRelevance": 80,
+      "region": "Eurozone",
+      "tags": [
+        "ecb",
+        "guidance",
+        "rates"
+      ],
+      "source": {
+        "name": "Google News — Central Banks",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNcjZPQW5IQVFHZlFJUHdha1FLeE41NURUeWlVbF9UNFlTTU5yQmJ3WDhaeElRM3VlMmJ2Y1pXOVI0aDEtWEpvNTdOU3pVSnV3RFIyMnIwR0VySkJXa252SFl0X0FSbVU2QUJGcGNIUDNLS2dMandRb0laU0xIODZNaGJuM2Y1VTFWNmZKQ3Y2SU1sVFJmYkFRMnpFclJZUVlRNDZvNXdGODF0R0JXam9mekpn?oc=5"
+      },
+      "publishedAt": "2026-06-11T15:41:21.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "0ce9a6a640fa",
+      "category": "central-banks",
+      "headline": "Turkey holds rates at 37% for a third straight meeting",
+      "summary": "Türkiye's central bank kept its policy rate unchanged at 37% as inflation pressures persist.",
+      "whyItMatters": "Sky-high rates are what's holding the lira together; any early easing talk is a lira risk.",
+      "currencies": [
+        "TRY"
+      ],
+      "impact": "neutral",
+      "fxRelevance": 60,
+      "region": "Turkey",
+      "tags": [
+        "turkey",
+        "rates",
+        "inflation"
+      ],
+      "source": {
+        "name": "Google News — Central Banks",
+        "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQSzNubDNZRXFUMHhKTXMzaS1ma3EySFFNTWJhdmNJTFJvcHM5X1FZanA3em8zc0FqVUhmRnU5eDhTUVFVajM2TmhiR0RJYnB5eHVUNmM0Q1hEbHJvRG13VHFsR0JsX0ZHM3M4Mjc2UUpvSU9DeU42RGlIeDQ3LXFTLXd6UC1FZlJaUkI5M3l2SDgzOFdMejg2bjJObkNFRGI5YnhjZHVPZ2Q0YjZlY2VLZkx6aEdOYjhDRHk3VGlxVjhPTng4aHdpaVJCUlBJSFNYTTBjWTFMOWFZOVBoSi04R2xn?oc=5"
+      },
+      "publishedAt": "2026-06-11T15:15:05.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "a1d7904e4864",
+      "category": "central-banks",
+      "headline": "Georgia adds $100m of gold as central bank buying trend continues",
+      "summary": "Georgia's central bank added $100m in gold reserves, joining a broad trend of central banks diversifying away from dollar assets.",
+      "whyItMatters": "Steady official gold buying chips away at long-term dollar dominance, even if it moves nothing today.",
+      "currencies": [
+        "USD"
+      ],
+      "impact": "neutral",
+      "fxRelevance": 40,
+      "region": "Emerging Markets",
+      "tags": [
+        "gold",
+        "reserves",
+        "diversification"
+      ],
+      "source": {
+        "name": "Google News — Central Banks",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQbk5zbDZGMmd5Y1lvcmNPQUVqbHAyN1FnMXQyT2NIakNibVdwT2RZWE85NTNXQ2pkVjNESjZJbWhSNFNNUTI3TXd4SXBMU05BWDNaTGhFanpBOVBUVGhsXzZZaWRrb0hfX1RxZTA5TUY2TGRUMHJxT2lLclJZaGdDYmdDZk5QSEZRMEp1NGNoSjRQcDFxcDBfUVNkYVVBVEl3?oc=5"
+      },
+      "publishedAt": "2026-06-11T16:40:00.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "d8c88f5d74ff",
+      "category": "central-banks",
+      "headline": "Bank of England updates collateral rules in its sterling framework",
+      "summary": "The BoE published changes to collateral eligibility in the Sterling Monetary Framework via a market notice.",
+      "whyItMatters": "Technical plumbing rather than policy — relevant to banks' funding, not a pound-mover.",
+      "currencies": [
+        "GBP"
+      ],
+      "impact": "neutral",
+      "fxRelevance": 30,
+      "region": "UK",
+      "tags": [
+        "boe",
+        "plumbing"
+      ],
+      "source": {
+        "name": "Bank of England",
+        "url": "https://www.bankofengland.co.uk/markets/market-notices/2026/june/collateral-eligibility-in-the-smf-11-june-2026"
+      },
+      "publishedAt": "2026-06-11T16:00:00.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "9de7cc7de4fa",
+      "category": "fx-analysis",
+      "headline": "Yen stuck near 160.50 as intervention fears offset dollar strength",
+      "summary": "USD/JPY is struggling for direction: the dollar is firm on war risk, but traders fear Japanese authorities will step in if the yen weakens much further.",
+      "whyItMatters": "Intervention talk caps how far the yen can slide — sharp snap-backs are the risk if Tokyo acts.",
+      "currencies": [
+        "JPY",
+        "USD"
+      ],
+      "impact": "mixed",
+      "fxRelevance": 85,
+      "region": "Japan",
+      "tags": [
+        "usdjpy",
+        "intervention",
+        "boj"
+      ],
+      "source": {
+        "name": "FXStreet",
+        "url": "https://www.fxstreet.com/news/japanese-yen-struggles-near-16050-as-intervention-fears-offset-us-dollar-strength-202606111602"
+      },
+      "publishedAt": "2026-06-11T16:02:45.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "570354e61a47",
+      "category": "fx-analysis",
+      "headline": "ING tips a 25bp Bank of Japan hike at next week's meeting",
+      "summary": "ING expects the BoJ to raise rates 25bp, citing resilient growth, negative real rates and upside inflation risks despite a soft May print.",
+      "whyItMatters": "A BoJ hike would finally give the yen real support after months of one-way weakness.",
+      "currencies": [
+        "JPY"
+      ],
+      "impact": "bullish",
+      "fxRelevance": 85,
+      "region": "Japan",
+      "tags": [
+        "boj",
+        "rate-hike",
+        "ing"
+      ],
+      "source": {
+        "name": "FXStreet",
+        "url": "https://www.fxstreet.com/news/bank-of-japan-gradual-normalisation-with-higher-jgb-yields-ing-202606111506"
+      },
+      "publishedAt": "2026-06-11T15:06:51.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "18c1abf56cd5",
+      "category": "fx-analysis",
+      "headline": "Scotiabank sees yen pressure persisting toward 162 per dollar",
+      "summary": "Scotiabank notes USD/JPY is holding above levels that triggered past interventions, and sees drift toward 162 even with a BoJ hike widely expected Tuesday.",
+      "whyItMatters": "If 162 trades despite a hike, intervention becomes the live scenario for anyone holding yen.",
+      "currencies": [
+        "JPY",
+        "USD"
+      ],
+      "impact": "bearish",
+      "fxRelevance": 80,
+      "region": "Japan",
+      "tags": [
+        "usdjpy",
+        "scotiabank",
+        "intervention"
+      ],
+      "source": {
+        "name": "FXStreet",
+        "url": "https://www.fxstreet.com/news/japanese-yen-pressure-persists-toward-162-against-us-dollar-scotiabank-202606111447"
+      },
+      "publishedAt": "2026-06-11T14:47:45.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "bd62022c1bf9",
+      "category": "fx-analysis",
+      "headline": "Australian dollar hits two-month low after hot US producer prices",
+      "summary": "AUD/USD slid toward 0.6980 as cautious risk sentiment and renewed dollar demand followed a strong US PPI report.",
+      "whyItMatters": "The Aussie is the market's risk thermometer — its slide says investors are playing defence.",
+      "currencies": [
+        "AUD",
+        "USD"
+      ],
+      "impact": "bearish",
+      "fxRelevance": 75,
+      "region": "Australia",
+      "tags": [
+        "audusd",
+        "risk-sentiment"
+      ],
+      "source": {
+        "name": "FXStreet",
+        "url": "https://www.fxstreet.com/news/australian-dollar-falls-to-two-month-low-after-hot-us-ppi-and-steady-jobless-claims-202606111558"
+      },
+      "publishedAt": "2026-06-11T15:58:45.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "1074e1f811ee",
+      "category": "fx-analysis",
+      "headline": "Pound slips as war-driven US inflation lifts the dollar",
+      "summary": "Sterling fell about 0.2% after US producer prices showed the war feeding into inflation, reviving dollar demand.",
+      "whyItMatters": "Hot US data pushes Fed-cut bets further out, a headwind for GBP/USD on top of UK politics.",
+      "currencies": [
+        "GBP",
+        "USD"
+      ],
+      "impact": "bearish",
+      "fxRelevance": 70,
+      "region": "UK",
+      "tags": [
+        "gbpusd",
+        "us-inflation"
+      ],
+      "source": {
+        "name": "FXStreet",
+        "url": "https://www.fxstreet.com/news/british-pound-slips-as-war-driven-ppi-fuels-us-dollar-rebound-202606111534"
+      },
+      "publishedAt": "2026-06-11T15:34:27.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "e7bd54ad37ad",
+      "category": "fx-analysis",
+      "headline": "BBH sees downside risk for the Canadian dollar as the BoC stays patient",
+      "summary": "Brown Brothers Harriman notes the Bank of Canada held at 2.25% for a fifth meeting with no urgency to hike, leaving the loonie exposed.",
+      "whyItMatters": "A patient BoC while others hike makes the Canadian dollar a funding casualty unless oil rescues it.",
+      "currencies": [
+        "CAD",
+        "USD"
+      ],
+      "impact": "bearish",
+      "fxRelevance": 65,
+      "region": "Canada",
+      "tags": [
+        "boc",
+        "cad",
+        "bbh"
+      ],
+      "source": {
+        "name": "FXStreet",
+        "url": "https://www.fxstreet.com/news/canadian-dollar-downside-risk-against-us-dollar-as-boc-stays-patient-bbh-202606111456"
+      },
+      "publishedAt": "2026-06-11T14:56:23.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "9d7785521a13",
+      "category": "fx-analysis",
+      "headline": "Nomura expects the SNB to stay on hold at 0% on 18 June",
+      "summary": "Nomura sees the Swiss National Bank keeping its policy rate at zero, citing low inflation and mixed activity data.",
+      "whyItMatters": "With the franc already strong on haven flows, a quiet SNB keeps the focus on the war for CHF direction.",
+      "currencies": [
+        "CHF"
+      ],
+      "impact": "neutral",
+      "fxRelevance": 65,
+      "region": "Switzerland",
+      "tags": [
+        "snb",
+        "nomura",
+        "safe-haven"
+      ],
+      "source": {
+        "name": "FXStreet",
+        "url": "https://www.fxstreet.com/news/swiss-national-bank-policy-pause-and-fx-stance-nomura-202606111436"
+      },
+      "publishedAt": "2026-06-11T14:36:19.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "2108d65fc360",
+      "category": "fx-analysis",
+      "headline": "BNY: Latin American carry trades hold up despite Fed repricing",
+      "summary": "BNY's flow data show LatAm currencies staying resilient even as investors trim positions in high-yielders under the new Fed backdrop.",
+      "whyItMatters": "Resilient carry means high LatAm rates are still compensating holders — watch for cracks if US yields keep rising.",
+      "currencies": [
+        "MXN",
+        "BRL"
+      ],
+      "impact": "neutral",
+      "fxRelevance": 60,
+      "region": "Latin America",
+      "tags": [
+        "carry-trade",
+        "latam",
+        "bny"
+      ],
+      "source": {
+        "name": "FXStreet",
+        "url": "https://www.fxstreet.com/news/latam-fx-carry-resilience-versus-fed-repricing-bny-202606111526"
+      },
+      "publishedAt": "2026-06-11T15:26:00.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "5054c88f9f47",
+      "category": "markets",
+      "headline": "Gold overtakes US Treasuries as the world's top reserve asset",
+      "summary": "Gold now makes up 27% of global reserve holdings, passing US Treasuries as central banks keep buying through the turmoil.",
+      "whyItMatters": "Reserve managers voting with their vaults is the clearest long-run challenge to dollar dominance yet.",
+      "currencies": [
+        "USD"
+      ],
+      "impact": "bearish",
+      "fxRelevance": 85,
+      "region": "Global",
+      "tags": [
+        "gold",
+        "reserves",
+        "dollar-dominance"
+      ],
+      "source": {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/video/counting-the-cost/2026/6/11/gold-is-now-the-top-reserve-asset-is-dollar-dominance-at-risk?traffic_source=rss"
+      },
+      "publishedAt": "2026-06-11T16:40:00.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "f639206a7bf0",
+      "category": "markets",
+      "headline": "High energy prices push US producer inflation higher in May",
+      "summary": "US producer prices rose more than expected in May, driven by the war's energy-cost surge.",
+      "whyItMatters": "Hot inflation keeps the Fed hawkish and the dollar bid — and feeds the case other central banks must respond too.",
+      "currencies": [
+        "USD"
+      ],
+      "impact": "bullish",
+      "fxRelevance": 75,
+      "region": "US",
+      "tags": [
+        "ppi",
+        "inflation",
+        "fed"
+      ],
+      "source": {
+        "name": "Investing.com Economic Indicators",
+        "url": "https://www.investing.com/news/economic-indicators/us-producer-prices-increase-more-than-expected-in-may-amid-jump-in-energy-costs-4737459"
+      },
+      "publishedAt": "2026-06-11T07:06:59.000Z",
+      "imageUrl": "https://i-invdn-com.investing.com/trkd-images/LYNXMPEM5A0WR_L.jpg"
+    },
+    {
+      "id": "b6f6fab0880e",
+      "category": "markets",
+      "headline": "ING: Asian central banks face tightening as FX and inflation risks build",
+      "summary": "ING sees Asian policymakers forced toward rate rises as currency weakness and imported inflation pressures mount.",
+      "whyItMatters": "Defensive hikes could steady Asian currencies — important if you send money on USD-Asia corridors.",
+      "currencies": [
+        "INR",
+        "PHP",
+        "IDR"
+      ],
+      "impact": "mixed",
+      "fxRelevance": 70,
+      "region": "Asia",
+      "tags": [
+        "asia",
+        "tightening",
+        "ing"
+      ],
+      "source": {
+        "name": "Google News — Markets & Data",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNaEdMVm5naGgxYlpRclA2b3duUTJSbDNqUWtuRFhsejkzdzF4QzIyWTNtMXhLa284MG5teFpsUDFnQ0E3TFVYb3B2dWQ3WDQxQXJ4M0Vhd1lIeHlfSlJNYzBRVjk3anR2VEhmbWtRb243Tld4Q0Rxb21OZEhMaGJKckJkMGxnQmxqbGIxY012b2ptNFRzYUZR?oc=5"
+      },
+      "publishedAt": "2026-06-11T15:57:25.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "738369257da9",
+      "category": "markets",
+      "headline": "More than half of African currencies have weakened since the war began",
+      "summary": "The Middle East conflict's energy and risk shock has dragged down most African currencies against the dollar.",
+      "whyItMatters": "Weaker local currencies stretch remittances further but make imports and dollar debts more painful at home.",
+      "currencies": [
+        "ZAR",
+        "KES",
+        "EGP"
+      ],
+      "impact": "bearish",
+      "fxRelevance": 70,
+      "region": "Africa",
+      "tags": [
+        "africa",
+        "emerging-markets",
+        "war"
+      ],
+      "source": {
+        "name": "Google News — Markets & Data",
+        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQb0RZekJqbVlHWXFQa1lKVzBFZ0FWU0lQLTJLTHp3V0RNdUNNM18tQmZqWlVPbUFwcmp1T25neHFDSGUyQ3oyQV9kTlgxUXhXbHZpWHY1b2dURGpRbVdOWTJiMXc2NHR0d3FIOHJBQXRfekpaNUx6NTdFWXMwTmd6MUxjUzl2VkkxTHRDV1JfYkNnMkNScDg5WDRfYXZXRFRySW5HMEloc0JCM2ZKNF9QTVY1dExBV1VwU3VOM3NJWjlEZmxWMjlvLQ?oc=5"
+      },
+      "publishedAt": "2026-06-11T09:09:23.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "d10ca2cf2a61",
+      "category": "markets",
+      "headline": "Naira firms to new highs as Nigeria's reserves climb above $50bn",
+      "summary": "The naira strengthened against the dollar as Nigeria's foreign reserves rose past $50bn.",
+      "whyItMatters": "A firmer naira changes the math on USD-NGN transfers — more stability, less windfall per dollar.",
+      "currencies": [
+        "NGN",
+        "USD"
+      ],
+      "impact": "bullish",
+      "fxRelevance": 65,
+      "region": "Africa",
+      "tags": [
+        "nigeria",
+        "naira",
+        "reserves"
+      ],
+      "source": {
+        "name": "Google News — Markets & Data",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQN0ZObnQ4Nl96RUpaLXpNdXduVmZjOXV5c3FaMWhOdnl5MUhSTXRxbV9ObDNLRVZzZkxtRjZxRjFLVzJnSklSa3daQnlmd3pNRnlBQTJJaWpqT1FLLWZ3cnRGdkZCc2FqQnVDWDdtbWR3Q0dhcGh1WkQ2SkhQQ0ZkaW1fa0JNREJhNGtvRnlaZ3c1amRwempINFBfX1hNWEdkWnYyQ2txRGR5X01YTWxJV3ZKVVNRd1Iz?oc=5"
+      },
+      "publishedAt": "2026-06-11T10:49:00.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "0ac5c0f5b3bb",
+      "category": "markets",
+      "headline": "Indian rupee under pressure as crude oil prices recover",
+      "summary": "The rupee came under renewed selling as oil rebounded — India imports most of its crude, so dearer oil widens its trade gap.",
+      "whyItMatters": "Oil-driven rupee weakness means better USD-INR rates for senders, but costlier fuel and imports in India.",
+      "currencies": [
+        "INR",
+        "USD"
+      ],
+      "impact": "bearish",
+      "fxRelevance": 65,
+      "region": "India",
+      "tags": [
+        "inr",
+        "oil",
+        "india"
+      ],
+      "source": {
+        "name": "Google News — Markets & Data",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNWDdUZlVSc0RKYlBNSzVQYnBNdTJObTJhLUduYWFYMmQ3bWI4U1dHLVgyc3FQNDAyVGRVNk5Ic0d1WWRTc3hKY19PSUdnU0k4ZElRbEh4VTZvbkhNSFp4WFdDMmRUMk85VjloX1p6dHFrel9XbVRpQXNoR0tPc3pYcg?oc=5"
+      },
+      "publishedAt": "2026-06-11T09:50:11.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "cb693f955438",
+      "category": "markets",
+      "headline": "Bahrain licenses its first stablecoin issuer for cross-border payments",
+      "summary": "Nasdaq-listed AXG won Bahrain's first stablecoin issuer license, targeting the global cross-border payments market with on-chain rails.",
+      "whyItMatters": "Regulated stablecoins are coming for the remittance business — cheaper rails could reshape how money crosses borders.",
+      "currencies": [
+        "USD"
+      ],
+      "impact": "neutral",
+      "fxRelevance": 60,
+      "region": "Middle East",
+      "tags": [
+        "stablecoin",
+        "payments",
+        "remittances"
+      ],
+      "source": {
+        "name": "Google News — Central Banks",
+        "url": "https://news.google.com/rss/articles/CBMisAJBVV95cUxPQm1JWnl4YlhoMm80NnN5UmdRcERLN1pSQUhZY2pfNWtydnNEZW1QRy12NEtSN1lsZGVXbktDSlZEUm9INzRKRXFwTGpUcTZsekpiT3FHV2lUY09RbEZYVDVReWtmamx6aV9TSklaUzFYci1uc3p4dGVrYXBpT01PNGp1QXB0VFJuaGJ1TzAzYlF5a1hSM2tBNWRmV2txcWxMTUJUb2xDampIT3N2N2FnWDlWYl9veWZOMFBLRGJZQWNjTEVCV3dobHJVdldJUDNRQnZnMFppNVM2SUdrU0I1RDZsQms2TUptNE1qMmNNUldBRVEzWjdCcXRrZGgxZWlRNVhwSnJpLTRaXzRjb2c5aFpOd3hHeXdacElVdmxsdU5xSWVCVm1EY3czbklrN2Zv?oc=5"
+      },
+      "publishedAt": "2026-06-11T16:34:11.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "bb101a81fc89",
+      "category": "markets",
+      "headline": "Commodity currencies slip as oil prices pull back",
+      "summary": "The Canadian and Australian dollars and Norwegian krone eased as crude retraced part of its war-driven spike.",
+      "whyItMatters": "Oil swings are whipsawing commodity currencies in both directions — expect chop, not trend.",
+      "currencies": [
+        "CAD",
+        "AUD",
+        "NOK"
+      ],
+      "impact": "bearish",
+      "fxRelevance": 60,
+      "region": "Global",
+      "tags": [
+        "oil",
+        "commodity-fx"
+      ],
+      "source": {
+        "name": "Google News — Markets & Data",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQUXNpUTFCcUNucVRYb2JXLWtmOVBuUmV2aVZINEE4eE5sZl9iMHpMQ3VoTzdZdkJHc0NUd3NPWEFXQ2UtMXRObEVHR1U4RFp2aDljY3NsRVFwVU5ZLWU2MEo4dEpob0JES0sxNkFtaWZWNkM4UTJudG9DTzhYY1FKLWQtbWc5aGFscV8yLXBPeFg?oc=5"
+      },
+      "publishedAt": "2026-06-11T11:25:00.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "3f8fc453a700",
+      "category": "life",
+      "headline": "Esquire's Father's Day gift picks dad will actually love",
+      "summary": "Esquire's editors round up tested gift ideas for Father's Day on 21 June, across a wide range of budgets.",
+      "whyItMatters": "Ten days out is the sweet spot — order now and skip the panic-buying premium.",
+      "currencies": [],
+      "impact": "neutral",
+      "fxRelevance": 70,
+      "region": "Global",
+      "tags": [
+        "fathers-day",
+        "gifts"
+      ],
+      "source": {
+        "name": "Google News — Travel Deals",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOSEVwQmMwMmMxSlIxbXgyMklmOG9vX2VBcDg5VFVJZWN2WFlZQllBTUNITnNSTjZ2WFN4eEVnYXNYNEQ1S1p6YmhhaENya3hJY1VDbDFiYUMwdnpiSF90UjVUMkRWajB0V1l0ZHN5MWRVQVZ2ZUtWVHhNSXNUU0R0UnVFdXZSWUdXclIxRlZEVnlCWGNO?oc=5"
+      },
+      "publishedAt": "2026-06-11T17:04:00.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "9ce59d3b065f",
+      "category": "life",
+      "headline": "Nintendo Switch 2 is $15 off at Woot through 19 June",
+      "summary": "Woot is taking $15 off the $449.99 Switch 2 for new customers until June 19th — a rare discount on a console still setting sales records.",
+      "whyItMatters": "Discounts on the Switch 2 are still scarce — a small but real saving on the summer's hottest gadget.",
+      "currencies": [],
+      "impact": "neutral",
+      "fxRelevance": 65,
+      "region": "US",
+      "tags": [
+        "nintendo",
+        "deals",
+        "gaming"
+      ],
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/gadgets/948292/nintendo-switch-2-deal-sale-woot"
+      },
+      "publishedAt": "2026-06-11T15:03:49.000Z",
+      "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/10/STKR001_NINTENDO_SWITCH_3_C.webp?quality=90&#038;strip=all&#038;crop=0,0,100,100"
+    },
+    {
+      "id": "600b464adb47",
+      "category": "life",
+      "headline": "The 33 best gifts for co-workers, tested by Wirecutter",
+      "summary": "Wirecutter's reviewers picked 33 reliable, mostly affordable gifts that work for colleagues at any closeness level.",
+      "whyItMatters": "Thoughtful-but-inexpensive is the hardest gift brief — this list solves it with tested picks.",
+      "currencies": [],
+      "impact": "neutral",
+      "fxRelevance": 50,
+      "region": "Global",
+      "tags": [
+        "gifts",
+        "wirecutter"
+      ],
+      "source": {
+        "name": "Wirecutter",
+        "url": "https://www.nytimes.com/wirecutter/gifts/best-gifts-for-coworkers/?utm_source=rss&utm_medium=feed&utm_campaign=RSS%20Feed"
+      },
+      "publishedAt": "2026-06-11T14:34:13.000Z",
+      "imageUrl": "https://cdn.thewirecutter.com/wp-content/media/2023/10/giftsforcoworkers-2048px-4662-3x2-1.jpg?auto=webp&quality=60&width=630"
+    },
+    {
+      "id": "72668d3b665d",
+      "category": "life",
+      "headline": "Travelzoo launches member-only travel deals in Germany",
+      "summary": "Travelzoo rolled out exclusive travel offers for its members in Germany.",
+      "whyItMatters": "Deal-hunting beats rate-watching — a packaged discount usually saves more than a better exchange rate.",
+      "currencies": [
+        "EUR"
+      ],
+      "impact": "neutral",
+      "fxRelevance": 45,
+      "region": "Eurozone",
+      "tags": [
+        "travel",
+        "deals",
+        "germany"
+      ],
+      "source": {
+        "name": "Google News — Travel Deals",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPaUFpeVBFOWhmSnJXN2ZHVkxQelo3U05qZk1DQUtWcjRMbkFndGd5SEJJZE5adkdyN3REWFFXX0ZvS3Q0SmYtcm1KXzJBTXlTZC1FbUtsbHIxVV9fcE9EaFdLRHQzMExhcUVmelk0YjdTUm5Cek9hMFFwbG5mMmNNS25iYS1jaFlwaEFldmY5Z2cwV3Y4RXlZSnZQbHdpQVJFdVZqdk1n?oc=5"
+      },
+      "publishedAt": "2026-06-11T16:14:58.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "709471fa20c4",
+      "category": "life",
+      "headline": "Waymo adds a $30-a-month premium tier for faster robotaxi pickups",
+      "summary": "Waymo Premier, an invite-only $29.99/month membership, promises quicker pickups and a more exclusive autonomous ride.",
+      "whyItMatters": "Subscriptions keep colonising daily life — worth a monthly audit of which ones still earn their fee.",
+      "currencies": [],
+      "impact": "neutral",
+      "fxRelevance": 45,
+      "region": "US",
+      "tags": [
+        "waymo",
+        "subscriptions",
+        "tech"
+      ],
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/transportation/947974/waymo-premier-monthly-membership-perks-priority-cash-back"
+      },
+      "publishedAt": "2026-06-11T16:00:00.000Z",
+      "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/image_b9dbd0.png?quality=90&#038;strip=all&#038;crop=0,0,100,100"
+    },
+    {
+      "id": "d5dd5159bd39",
+      "category": "life",
+      "headline": "Apple TV's hit streak is making it the new HBO",
+      "summary": "Severance, Pachinko, Silo and Ted Lasso have quietly turned Apple TV into the prestige-TV destination.",
+      "whyItMatters": "If you're trimming streaming costs, Apple TV's catalogue now argues for a spot in the keep pile.",
+      "currencies": [],
+      "impact": "neutral",
+      "fxRelevance": 40,
+      "region": "Global",
+      "tags": [
+        "streaming",
+        "apple",
+        "entertainment"
+      ],
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/column/948295/apple-tv-new-hbo"
+      },
+      "publishedAt": "2026-06-11T15:30:00.000Z",
+      "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/03/Severance_Photo_020912.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100"
+    },
+    {
+      "id": "de83d4862bc7",
+      "category": "life",
+      "headline": "The Weather Channel app now forecasts bad allergy days",
+      "summary": "A new allergy experience in the app predicts flare-up days and explains what's driving symptoms.",
+      "whyItMatters": "A free upgrade that can save you a pharmacy run — set the alert before hay fever season peaks.",
+      "currencies": [],
+      "impact": "neutral",
+      "fxRelevance": 40,
+      "region": "Global",
+      "tags": [
+        "apps",
+        "health",
+        "free"
+      ],
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/tech/948363/weather-channel-mobile-app-ios-android-pollen-forecast"
+      },
+      "publishedAt": "2026-06-11T15:02:33.000Z",
+      "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/weatherchannel1.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100"
+    },
+    {
+      "id": "0576a12ff5ad",
+      "category": "life",
+      "headline": "A 37-key sweet spot: the portable MIDI controller worth packing",
+      "summary": "After testing dozens, The Verge lands on 37 keys as the ideal size for a music controller that still fits in a backpack.",
+      "whyItMatters": "A researched pick beats an impulse buy — the right size means you'll actually use it.",
+      "currencies": [],
+      "impact": "neutral",
+      "fxRelevance": 35,
+      "region": "Global",
+      "tags": [
+        "music",
+        "gadgets",
+        "reviews"
+      ],
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/tech/948024/arturia-minilab-37-midi-controller-review"
+      },
+      "publishedAt": "2026-06-11T16:00:00.000Z",
+      "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/268579_Arturia_MiniLab_37_TOBrien_0004.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100"
+    }
+  ]
+}
