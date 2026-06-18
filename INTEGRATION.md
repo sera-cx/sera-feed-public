@@ -97,7 +97,8 @@ func loadFeed() async -> Feed? {
   "enrichment": "ai",                   // "ai" | "heuristic" | "mixed" (provenance; informational)
   "brief": { /* DailyBrief, see §4 — CAN BE null */ },
   "categories": [ /* Category[], see §5 — render order */ ],
-  "items": [ /* FeedItem[], see §6 — pre-ranked, ≤8 per category */ ]
+  "items": [ /* FeedItem[], see §6 — pre-ranked, ≤8 per category */ ],
+  "alerts": [ /* string[] — ids of push-worthy items, see §6.1; [] on quiet days */ ]
 }
 ```
 
@@ -226,6 +227,21 @@ Already ranked (category priority → relevance → recency) and capped at 8 per
 
 ---
 
+## 6.1 `alerts` — push-notification candidates
+
+Top-level `alerts` is an array of **item `id`s** the feed considers significant enough to push (high FX relevance, non-lifestyle). It's a subset of `items` — look each id up in the list you already have; no duplicated data.
+
+```jsonc
+"alerts": ["28c649b824d7", "08197b8cd954"]   // [] on a quiet day
+```
+
+- **The feed only flags candidates — you own delivery.** Decide whether/when to push, respect the user's notification settings, and **dedupe against ids you've already sent** (the same id can appear across a couple of hourly builds while the story is current).
+- Good push payload: the item's `headline` + `whyItMatters`, deep-linking to that card.
+- Optional: gate by `impact !== "neutral"` or by the user's currencies (`item.currencies`) so a USD-only user isn't pinged about a JPY event.
+- Don't badge or reorder the feed from `alerts` — it's purely a push hint; in-feed ranking already reflects importance.
+
+---
+
 ## 7. TypeScript types
 
 Copy-paste:
@@ -277,6 +293,7 @@ interface Feed {
   brief: DailyBrief | null;      // hide card when null
   categories: Category[];
   items: FeedItem[];
+  alerts: string[];              // ids of push-worthy items (subset of items)
 }
 ```
 
@@ -293,6 +310,7 @@ interface Feed {
 - [ ] `pairsToWatch` / `calendar` can be `[]` → hide those rows.
 - [ ] `generatedAt` older than ~26h → optional subtle "updated yesterday" label; keep showing the content.
 - [ ] Empty `items` (rare) → friendly empty state, keep the brief if present.
+- [ ] `alerts` is for push only (§6.1) — dedupe against already-sent ids; don't use it to badge/reorder the feed.
 - [ ] Always show the source name; card tap opens `source.url`.
 - [ ] Show an **"Information, not investment advice"** disclaimer near the brief.
 
