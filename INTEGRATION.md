@@ -25,33 +25,65 @@ GET https://sera-cx.github.io/sera-feed-public/2026-06-11.json
 
 ---
 
-## 2. When to fetch & how to cache
+## 2. Store the feed locally and fall back to it  ⭐ required
 
-The feed rebuilds **hourly**. Recommended:
+**Treat the last feed you successfully fetched as the source of truth.** Persist it to local storage and render *that* — the network fetch only ever upgrades what you already have. This makes the screen instant, offline-capable, and resilient to our endpoint being slow, stale, or briefly unreachable.
 
-- Fetch on **app launch** and on **pull-to-refresh**. There's no value polling faster than ~hourly.
-- The response sends an `ETag` and `cache-control: max-age=600`. Send the last `ETag` back as `If-None-Match` and you get a **`304 Not Modified`** (empty body) when nothing changed — cheap and bandwidth-free.
-- Cache the last good payload locally and render it offline; the feed is just as useful a few hours old.
+The rules:
+
+1. **On launch, render the stored feed immediately** (don't block the screen on the network).
+2. **Then fetch in the background.** On a successful response with a **newer `generatedAt`**, replace the stored copy and re-render. Otherwise, keep showing what you have.
+3. **Never downgrade.** Only replace the stored feed when the fetched one has a strictly newer `generatedAt`. If a fetch fails, times out, or returns a `304`/older/identical payload, **keep the stored feed on screen** — do not clear it, do not show an error screen.
+4. **First launch with nothing stored and no network** → show a friendly empty/loading state, retry on next launch or pull-to-refresh.
+
+The feed rebuilds roughly hourly, so fetch on **app launch** and **pull-to-refresh** — no value polling faster. The response sends an `ETag` and `cache-control: max-age=600`; send the last `ETag` back as `If-None-Match` to get a cheap **`304 Not Modified`** when nothing changed.
 
 ```ts
-const res = await fetch(FEED_BASE + "/latest.json",
-  lastEtag ? { headers: { "If-None-Match": lastEtag } } : {});
+// Returns the feed to render. Always falls back to the stored copy.
+async function loadFeed(): Promise<Feed | null> {
+  const stored = readStoredFeed();           // last good feed, or null
+  try {
+    const res = await fetch(FEED_BASE + "/latest.json",
+      storedEtag ? { headers: { "If-None-Match": storedEtag } } : {});
 
-if (res.status === 304) return cachedFeed;     // nothing changed
-const feed: Feed = await res.json();
-saveCache(feed, res.headers.get("ETag"));
-return feed;
+    if (res.status === 304) return stored;     // unchanged — keep stored
+    if (!res.ok) return stored;                // server hiccup — keep stored
+
+    const fetched: Feed = await res.json();
+    // Only upgrade: never replace a newer stored feed with an older fetch.
+    if (stored && fetched.generatedAt <= stored.generatedAt) return stored;
+
+    saveStoredFeed(fetched, res.headers.get("ETag"));
+    return fetched;
+  } catch {
+    return stored;                             // offline / timeout — keep stored
+  }
+}
 ```
 
 ```swift
-var req = URLRequest(url: URL(string: feedBase + "/latest.json")!)
-if let etag = lastEtag { req.setValue(etag, forHTTPHeaderField: "If-None-Match") }
-let (data, resp) = try await URLSession.shared.data(for: req)
-if (resp as? HTTPURLResponse)?.statusCode == 304 { return cachedFeed }
-let feed = try JSONDecoder().decode(Feed.self, from: data)
+func loadFeed() async -> Feed? {
+  let stored = readStoredFeed()               // last good feed, or nil
+  var req = URLRequest(url: URL(string: feedBase + "/latest.json")!)
+  if let etag = storedEtag { req.setValue(etag, forHTTPHeaderField: "If-None-Match") }
+  do {
+    let (data, resp) = try await URLSession.shared.data(for: req)
+    let http = resp as? HTTPURLResponse
+    if http?.statusCode == 304 { return stored }
+    guard http?.statusCode == 200 else { return stored }
+    let fetched = try JSONDecoder().decode(Feed.self, from: data)
+    if let s = stored, fetched.generatedAt <= s.generatedAt { return stored }
+    saveStoredFeed(fetched, http?.value(forHTTPHeaderField: "ETag"))
+    return fetched
+  } catch { return stored }                    // offline / decode fail — keep stored
+}
 ```
 
-**Staleness guard:** if `generatedAt` is older than ~26 hours, show a quiet "feed paused" state rather than presenting day-old news as current.
+> `generatedAt` is an ISO-8601 string; ISO timestamps compare correctly as plain strings, so `a <= b` works without date parsing.
+
+**Staleness label (optional, cosmetic):** even while showing a stored feed, if its `generatedAt` is older than ~26h you may show a subtle "Updated yesterday"-style label so users know it's not breaking news. Keep showing the content — an old feed still beats a blank screen.
+
+> **Note on our side:** our endpoint always serves the most recent build and stays up independently of how the feed is generated, so "no new feed" normally just means the same `generatedAt` as last time (your `304`/no-upgrade path). The local store is your guarantee the screen still works even if our endpoint is ever unreachable.
 
 ---
 
@@ -250,11 +282,14 @@ interface Feed {
 
 ## 8. Edge cases checklist
 
+- [ ] **Persist the last good feed; render from the store first** (§2) — instant, offline-capable.
+- [ ] **Fetch failed / timed out / `304` / older payload → keep showing the stored feed** (§2). Never blank the screen on a failed refresh.
+- [ ] **Never downgrade** — only replace the stored feed when the fetched `generatedAt` is strictly newer.
 - [ ] `brief === null` → hide the brief card.
 - [ ] `imageUrl === null` **or image fails to load** → category emoji tile.
 - [ ] `currencies === []` → no currency chips (normal for Life & Money).
 - [ ] `pairsToWatch` / `calendar` can be `[]` → hide those rows.
-- [ ] `generatedAt` older than ~26h → "feed paused" state.
+- [ ] `generatedAt` older than ~26h → optional subtle "updated yesterday" label; keep showing the content.
 - [ ] Empty `items` (rare) → friendly empty state, keep the brief if present.
 - [ ] Always show the source name; card tap opens `source.url`.
 - [ ] Show an **"Information, not investment advice"** disclaimer near the brief.
