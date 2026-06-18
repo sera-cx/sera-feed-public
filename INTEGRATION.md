@@ -99,7 +99,8 @@ func loadFeed() async -> Feed? {
   "brief": { /* DailyBrief, see §4 — CAN BE null */ },
   "categories": [ /* Category[], see §5 — render order */ ],
   "items": [ /* FeedItem[], see §6 — pre-ranked, ≤8 per category */ ],
-  "alerts": [ /* string[] — ids of push-worthy items, see §6.1; [] on quiet days */ ]
+  "alerts": [ /* string[] — ids of push-worthy items, see §6.1; [] on quiet days */ ],
+  "currencyOutlook": [ /* CurrencyOutlook[] — daily movers board, see §6.2 */ ]
 }
 ```
 
@@ -191,6 +192,8 @@ Already ranked (category priority → relevance → recency) and capped at 8 per
   "whyItMatters": "Escalation pushes oil higher and money into safe havens, lifting the dollar and pressuring riskier currencies.",
   "currencies": ["USD", "CHF"],
   "impact": "bullish",
+  "currencyImpacts": [{ "code": "USD", "direction": "up" }, { "code": "CHF", "direction": "up" }],
+  "fxDriver": "geopolitics",
   "fxRelevance": 95,
   "region": "Global",
   "tags": ["iran", "oil", "geopolitics", "safe-haven"],
@@ -210,6 +213,8 @@ Already ranked (category priority → relevance → recency) and capped at 8 per
   "whyItMatters": "Ten days out is the sweet spot — order now and skip the panic-buying premium.",
   "currencies": [],
   "impact": "neutral",
+  "currencyImpacts": [],
+  "fxDriver": "other",
   "fxRelevance": 70,
   "region": "Global",
   "tags": ["fathers-day", "gifts"],
@@ -227,7 +232,9 @@ Already ranked (category priority → relevance → recency) and capped at 8 per
 | `summary` | string | What happened, 1–2 sentences |
 | `whyItMatters` | string | The "so what" — **give it visual emphasis** (it's the value of the feed) |
 | `currencies` | string[] (ISO 4217) | Render as chips, most-affected first. **Can be `[]`** (lifestyle). |
-| `impact` | `bullish`\|`bearish`\|`neutral`\|`mixed` | Applies to the **first** currency → arrow/color (↑green / ↓red / –grey / ⇅amber) |
+| `impact` | `bullish`\|`bearish`\|`neutral`\|`mixed` | At-a-glance badge for the **first** currency → arrow/color (↑green / ↓red / –grey / ⇅amber) |
+| `currencyImpacts` | `{code, direction}[]` | Direction (`up`/`down`/`unclear`) **per** currency in `currencies`, same order. Use to personalize per the user's currencies — see §6.3. `[]` for lifestyle. |
+| `fxDriver` | enum | What kind of catalyst (see §6.3) — optional filter/group/badge |
 | `fxRelevance` | int 0–100 | Optional: a subtle "hot" badge at ≥90 |
 | `region` | string | Short label ("US", "Eurozone", "Japan", "Global") — optional chip |
 | `tags` | string[] (≤4) | Optional |
@@ -259,6 +266,49 @@ Top-level `alerts` is an array of **item `id`s** the feed considers significant 
 
 ---
 
+## 6.2 `currencyOutlook` — daily movers board
+
+Top-level array summarizing **which currencies the day's news is pushing up or down**, aggregated from every item's `currencyImpacts`. Most-cited first. Great for a compact "what's moving" strip above or below the brief.
+
+```jsonc
+"currencyOutlook": [
+  { "code": "USD", "net": "up",    "signals": 5 },
+  { "code": "JPY", "net": "down",  "signals": 3 },
+  { "code": "EUR", "net": "down",  "signals": 3 },
+  { "code": "INR", "net": "up",    "signals": 2 }
+]
+```
+
+- `net`: `up` | `down` | `mixed` (mixed = equal up/down signals). `signals` = how many items gave it a clear direction (drives ordering and confidence).
+- Only currencies with at least one clear (non-`unclear`) signal appear. `[]` on a quiet day.
+- Render as a row of chips (`USD ↑`, `JPY ↓`) or a small table. It's a **net read of today's news**, not live FX rates — pair it with the disclaimer, don't show it as a price.
+
+---
+
+## 6.3 FX impact: `currencyImpacts` + `fxDriver` (the core of the feed)
+
+These two per-item fields are what make this an FX feed rather than a headline list.
+
+**`currencyImpacts`** gives the expected direction for **each** affected currency, because FX is relative — one story typically moves a pair in opposite directions:
+
+```jsonc
+"currencies": ["USD", "JPY"],
+"impact": "bullish",                                  // at-a-glance, first currency
+"currencyImpacts": [
+  { "code": "USD", "direction": "up" },               // dollar strengthens
+  { "code": "JPY", "direction": "down" }               // yen weakens
+]
+```
+
+- `direction`: `up` (strengthens) / `down` (weakens) / `unclear`. Entry order matches `currencies`. The first entry always agrees with `impact`.
+- **This is the hook for corridor personalization.** sera.money knows each user's currencies — look them up here to tailor the line: for a USD→JPY sender, `JPY: down` → *"the yen is weakening — your transfer goes further."* You can also sort or badge items by relevance to the user's own currencies.
+
+**`fxDriver`** is the catalyst type — one of: `rate-decision`, `intervention`, `economic-data`, `geopolitics`, `commodity`, `capital-flows`, `policy-commentary`, `other` (lifestyle). Use it to group ("Rate decisions today"), filter, or icon-badge cards, and to help users learn what actually moves money.
+
+> Backfill note: items enriched before these fields existed have a best-effort `currencyImpacts` (primary currency only; others `unclear`) and an inferred `fxDriver`. Items from current builds are fully reasoned. Code defensively (`unclear` and `other` are always valid).
+
+---
+
 ## 7. TypeScript types
 
 Copy-paste:
@@ -266,6 +316,13 @@ Copy-paste:
 ```ts
 type CategoryId = "world" | "central-banks" | "fx-analysis" | "markets" | "life";
 type Impact = "bullish" | "bearish" | "neutral" | "mixed";
+type FxDirection = "up" | "down" | "unclear";
+type FxDriver =
+  | "rate-decision" | "intervention" | "economic-data" | "geopolitics"
+  | "commodity" | "capital-flows" | "policy-commentary" | "other";
+
+interface CurrencyImpact { code: string; direction: FxDirection; }
+interface CurrencyOutlook { code: string; net: "up" | "down" | "mixed"; signals: number; }
 
 interface Category {
   id: CategoryId;
@@ -282,7 +339,9 @@ interface FeedItem {
   summary: string;
   whyItMatters: string;
   currencies: string[];          // ISO 4217; may be []
-  impact: Impact;                // for currencies[0]
+  impact: Impact;                // at-a-glance, for currencies[0]
+  currencyImpacts: CurrencyImpact[];  // direction per currency, same order
+  fxDriver: FxDriver;            // catalyst type
   fxRelevance: number;           // 0–100
   region: string;
   tags: string[];
@@ -319,6 +378,7 @@ interface Feed {
   categories: Category[];
   items: FeedItem[];
   alerts: string[];              // ids of push-worthy items (subset of items)
+  currencyOutlook: CurrencyOutlook[];  // daily movers board (derived)
 }
 ```
 
