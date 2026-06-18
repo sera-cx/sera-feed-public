@@ -95,6 +95,7 @@ func loadFeed() async -> Feed? {
   "date": "2026-06-11",                 // YYYY-MM-DD
   "generatedAt": "2026-06-11T17:48:02.000Z",  // ISO 8601 — use for staleness check
   "enrichment": "ai",                   // "ai" | "heuristic" | "mixed" (provenance; informational)
+  "sentiment": { /* risk-on/off dial, see §3.1 — always present */ },
   "brief": { /* DailyBrief, see §4 — CAN BE null */ },
   "categories": [ /* Category[], see §5 — render order */ ],
   "items": [ /* FeedItem[], see §6 — pre-ranked, ≤8 per category */ ],
@@ -104,13 +105,29 @@ func loadFeed() async -> Feed? {
 
 Render order on screen, top to bottom:
 
-1. **`brief`** → the pinned "Sera's Daily Brief" card (§4).
-2. **`categories`** → section headers / tabs, in `priority` order (§5).
-3. **`items`** → cards within each category (§6).
+1. **`sentiment`** → the risk-on/off dial (§3.1).
+2. **`brief`** → the pinned "Sera's Daily Brief" card (§4).
+3. **`categories`** → section headers / tabs, in `priority` order (§5).
+4. **`items`** → cards within each category (§6).
 
 ---
 
-## 4. `brief` — the pinned card  ⚠️ nullable
+## 3.1 `sentiment` — risk-on / risk-off dial
+
+A small market-mood gauge for the top of the feed, derived from the day's items. **Always present** (never null).
+
+```jsonc
+"sentiment": {
+  "score": 18,            // -100 (risk-off) .. +100 (risk-on)
+  "label": "neutral",     // "risk-on" | "risk-off" | "neutral"
+  "summary": "Mixed signals — no clear risk-on or risk-off tilt across currencies today.",
+  "basis": 16             // # of items that informed the score
+}
+```
+
+- Render as a needle/bar from −100→+100, or just a colored pill from `label` (green risk-on / red risk-off / grey neutral) with `summary` as the caption.
+- It's a **heuristic mood indicator, not a data feed** — safe-haven strength reads risk-off, higher-yield/EM strength reads risk-on, weighted by each item's relevance. Treat it as ambient color, not a number to trade on (the disclaimer covers it).
+- `basis` of 0 means a very quiet build → `score` 0 / `neutral`; render the neutral pill.
 
 `brief` is `null` when there's no fresh brief (e.g. a quiet build). **Hide the card entirely when null.**
 
@@ -274,6 +291,13 @@ interface FeedItem {
   imageUrl: string | null;       // https or null
 }
 
+interface Sentiment {
+  score: number;                 // -100 (risk-off) .. +100 (risk-on)
+  label: "risk-on" | "risk-off" | "neutral";
+  summary: string;
+  basis: number;
+}
+
 interface PairToWatch { pair: string; note: string; }
 
 interface DailyBrief {
@@ -290,6 +314,7 @@ interface Feed {
   date: string;                  // YYYY-MM-DD
   generatedAt: string;           // ISO 8601
   enrichment: "ai" | "heuristic" | "mixed";
+  sentiment: Sentiment;          // always present
   brief: DailyBrief | null;      // hide card when null
   categories: Category[];
   items: FeedItem[];
@@ -304,6 +329,7 @@ interface Feed {
 - [ ] **Persist the last good feed; render from the store first** (§2) — instant, offline-capable.
 - [ ] **Fetch failed / timed out / `304` / older payload → keep showing the stored feed** (§2). Never blank the screen on a failed refresh.
 - [ ] **Never downgrade** — only replace the stored feed when the fetched `generatedAt` is strictly newer.
+- [ ] `sentiment` is always present (§3.1) — render the dial/pill from `label`; `basis: 0` → neutral.
 - [ ] `brief === null` → hide the brief card.
 - [ ] `imageUrl === null` **or image fails to load** → category line-icon tile (your own asset, keyed off `icon`/`id`).
 - [ ] `currencies === []` → no currency chips (normal for Life & Money).
