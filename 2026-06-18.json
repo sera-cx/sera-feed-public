@@ -1,43 +1,42 @@
 {
   "version": 1,
   "date": "2026-06-18",
-  "generatedAt": "2026-06-18T03:47:17.926Z",
+  "generatedAt": "2026-06-18T04:19:51.016Z",
   "enrichment": "ai",
   "sentiment": {
-    "score": 18,
-    "label": "neutral",
-    "summary": "Mixed signals — no clear risk-on or risk-off tilt across currencies today.",
+    "score": 25,
+    "label": "risk-on",
+    "summary": "Risk appetite is firm — money is favouring higher-yield currencies over safe havens.",
     "basis": 16
   },
   "brief": {
-    "headline": "Hawkish Fed lifts the dollar as the US and Iran sign a peace deal",
-    "summary": "The dollar is sitting near a two-month high after the Federal Reserve held rates but signalled it could still hike later this year, a hawkish surprise that knocked gold and equities lower. At the same time, the US and Iran formally signed a memorandum of understanding to end their war, easing Middle East tensions and helping oil-importing currencies like the Indian rupee. Attention now turns to the Bank of England's decision later today, after UK inflation refused to cool. The yen is the weak spot, near its lowest since mid-2024 and stoking talk of intervention, while the euro is steadier as eurozone core inflation came in hot. Elsewhere, Brazil cut rates again despite a worse inflation outlook, and the Egyptian pound has quietly become the world's best performer.",
+    "headline": "Peace deal cools oil; a hawkish, new-look Fed keeps the dollar firm",
+    "summary": "Risk appetite improved after the US and Iran signed a framework to end their war, pulling oil prices lower and lifting Asian stocks, though some US Republicans are already questioning whether the deal will hold. The dollar is sitting near a two-month high as new Federal Reserve chair Kevin Warsh held rates but left the door open to a hike and launched a sweeping review of how the central bank runs. Attention now turns to the Bank of England's decision later today, after UK inflation refused to cool. Central banks are pulling in different directions: Brazil and Zimbabwe cut rates while Indonesia and the Philippines look set to hike to defend their currencies against the strong dollar. The yen remains the weak spot near multi-year lows, with Tokyo acknowledging the strain on households but giving no fresh intervention signal, while cheaper oil is helping the Indian rupee firm.",
     "pairsToWatch": [
       {
-        "pair": "EUR/USD",
-        "note": "Hawkish Fed caps the euro even as hot eurozone core inflation lends some support."
-      },
-      {
         "pair": "USD/JPY",
-        "note": "Near multi-year highs; watch for Japanese intervention warnings as the yen stays weak."
+        "note": "Near multi-year highs; Japan flags the household cost of a weak yen but signals no imminent intervention."
       },
       {
         "pair": "GBP/USD",
-        "note": "The Bank of England's decision today is the swing factor for the pound."
+        "note": "The Bank of England's decision today is the swing factor for the pound after sticky UK inflation."
       },
       {
         "pair": "USD/INR",
-        "note": "Cheaper oil and calmer geopolitics are helping the rupee firm."
+        "note": "Cheaper oil and calmer geopolitics are helping the rupee firm, trimming remittance payouts."
+      },
+      {
+        "pair": "USD/BRL",
+        "note": "Brazil's third straight rate cut and a hawkish Fed leave the real on the back foot."
       }
     ],
     "calendar": [
       "Bank of England interest-rate decision due later today",
-      "Fed officials' commentary in focus after the hawkish hold",
-      "Watch for any Japanese intervention signals while the yen stays weak",
-      "Oil and Strait of Hormuz headlines in play after the US-Iran deal"
+      "Bank Indonesia and Philippine central bank rate decisions expected",
+      "Markets watching for any Japanese signals on the weak yen"
     ],
-    "spendIdea": "A firmer dollar stretches further abroad right now, so dollar-earners eyeing a trip get more for their money — and it's a good moment to grab well-reviewed travel gear or a best-value laptop before the memory-chip shortage pushes electronics prices up.",
-    "transferTip": "With the Bank of England deciding today and the Fed's hawkish turn still rippling through, rates can swing sharply around both — if your transfer can wait, the calmer hours after the BoE announcement often price more steadily."
+    "spendIdea": "With the yen near multi-year lows, Japan is unusually affordable right now — pricing out a trip or pre-paying tours in yen could stretch a travel budget further.",
+    "transferTip": "If you're sending money to India, the rupee has firmed on cheaper oil, so you'll get slightly fewer rupees per dollar today than last week — worth watching for pullbacks rather than rushing a large transfer."
   },
   "categories": [
     {
@@ -100,6 +99,33 @@
         "url": "https://www.aljazeera.com/video/newsfeed/2026/6/18/us-and-iran-sign-memorandum-of-understanding-to-end-war?traffic_source=rss"
       },
       "publishedAt": "2026-06-18T01:42:10.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "1861ec8d8854",
+      "category": "world",
+      "headline": "US and Iran sign framework to end war, lifting stocks and cooling oil",
+      "summary": "The United States and Iran signed a framework agreement to end their war, sending Brent crude lower and lifting stock markets in Japan, South Korea and Taiwan. The easing of Middle East tensions improved global risk appetite.",
+      "whyItMatters": "Calmer geopolitics and cheaper oil tend to support risk-sensitive and oil-importing currencies while easing inflation pressure worldwide.",
+      "currencies": [
+        "USD",
+        "JPY",
+        "INR"
+      ],
+      "impact": "mixed",
+      "fxRelevance": 85,
+      "region": "Global",
+      "tags": [
+        "geopolitics",
+        "oil",
+        "risk-sentiment",
+        "us-iran"
+      ],
+      "source": {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/economy/2026/6/18/oil-prices-fall-stocks-rally-as-us-iran-sign-framework-to-end-war?traffic_source=rss"
+      },
+      "publishedAt": "2026-06-18T03:45:13.000Z",
       "imageUrl": null
     },
     {
@@ -179,6 +205,31 @@
       "imageUrl": "https://i.guim.co.uk/img/media/104ca6520513fcfa6c0c1cc4647bd64ba5426b56/277_0_3973_3178/master/3973.jpg?width=140&quality=85&auto=format&fit=max&s=c4eecff1780c636e646b2765e5e7d2e3"
     },
     {
+      "id": "0483e8f84627",
+      "category": "world",
+      "headline": "US-Iran agreement draws backlash from some Republicans",
+      "summary": "Several Republican senators, including Louisiana's Bill Cassidy, sharply criticised the US-Iran memorandum of understanding, calling it a major foreign-policy mistake. The pushback raises questions about how durable the deal will prove.",
+      "whyItMatters": "If doubts grow about whether the deal holds, the recent risk-on mood and oil-price relief that have supported many currencies could quickly reverse.",
+      "currencies": [
+        "USD"
+      ],
+      "impact": "neutral",
+      "fxRelevance": 55,
+      "region": "US",
+      "tags": [
+        "us-politics",
+        "us-iran",
+        "geopolitics",
+        "risk"
+      ],
+      "source": {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/news/2026/6/18/trumps-iran-framework-draws-backlash-from-some-republicans?traffic_source=rss"
+      },
+      "publishedAt": "2026-06-18T03:11:41.000Z",
+      "imageUrl": null
+    },
+    {
       "id": "a0d603113d61",
       "category": "world",
       "headline": "Starmer signals a cabinet job for Andy Burnham amid leadership chatter",
@@ -251,6 +302,31 @@
       "imageUrl": null
     },
     {
+      "id": "8bf92e758df3",
+      "category": "central-banks",
+      "headline": "Warsh opens his Fed chairmanship with a sweeping review as rates hold",
+      "summary": "In his first meeting as Federal Reserve chair, Kevin Warsh kept interest rates unchanged and launched a broad review of how the central bank operates. The move signals potential changes to Fed strategy and communication.",
+      "whyItMatters": "A shake-up in how the Fed sets and explains policy could reshape expectations for US rates, a key driver of the dollar's strength.",
+      "currencies": [
+        "USD"
+      ],
+      "impact": "neutral",
+      "fxRelevance": 80,
+      "region": "US",
+      "tags": [
+        "federal-reserve",
+        "warsh",
+        "monetary-policy",
+        "usd"
+      ],
+      "source": {
+        "name": "Google News — Central Banks",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNN1BlMXowZjJHZ0d2UTVxZmhFd3F6QWZXQklHVjBBSGZJZ3JvU0lURm5CN0xkSndBb203RkVvR1NSRUw4U25kVmY1RExWaHhvVDdfWC1Jd3UzRE1qajZxNFRrRndtY0U5aDZjc0dqUmhTSkVoS2J0TUh3X0pwaTFudVFIdG53RkdkYWow?oc=5"
+      },
+      "publishedAt": "2026-06-17T23:08:00.000Z",
+      "imageUrl": null
+    },
+    {
       "id": "f5e73da17b14",
       "category": "central-banks",
       "headline": "Bank of England set to announce its latest interest-rate decision today",
@@ -301,6 +377,57 @@
       "imageUrl": null
     },
     {
+      "id": "d415ce92fe45",
+      "category": "central-banks",
+      "headline": "Brazil cuts interest rates again but warns fiscal stimulus could blunt policy",
+      "summary": "Brazil's central bank lowered its benchmark interest rate for a third straight meeting, but cautioned that government fiscal stimulus may weaken the impact of its cuts while inflation stays hot.",
+      "whyItMatters": "Falling Brazilian rates can pressure the real, affecting the cost of goods and travel for anyone dealing in the currency.",
+      "currencies": [
+        "BRL"
+      ],
+      "impact": "bearish",
+      "fxRelevance": 75,
+      "region": "Brazil",
+      "tags": [
+        "brazil",
+        "rate-cut",
+        "central-bank",
+        "brl"
+      ],
+      "source": {
+        "name": "Google News — Central Banks",
+        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPZ050MnVISUlfazN4LWhIMHhKWVZwVF9VWFV5YXZlM3drM3luekMwNV9mak5kT3RFbFhCOTFfR2NEVDZONE5TckNLelhYWGo3V0VOMWdRQ3k4aGZwQm1XMmh1ekdVN2dFTEt0T3d0X3c1MFFlb2Y4WGZkTWFhbTY4RC03cnd2cTFxeUVYb2hlUzkwQWZZRXZaZS13VGRaY09IbGN5YU1oSzAxQlAwY05UWU1rd2dkaEtzT1N5Y3JrSmlyb3E2aGdYME13?oc=5"
+      },
+      "publishedAt": "2026-06-18T00:10:30.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "5d349ae83fed",
+      "category": "central-banks",
+      "headline": "Indonesia and Philippines move to raise rates as caution prevails",
+      "summary": "Bank Indonesia and the Philippine central bank are both expected to lift interest rates, opting for caution amid a firm US dollar and global uncertainty.",
+      "whyItMatters": "Higher rates can help shield the rupiah and peso from a strong dollar, steadying costs for anyone holding or sending those currencies.",
+      "currencies": [
+        "IDR",
+        "PHP"
+      ],
+      "impact": "bullish",
+      "fxRelevance": 70,
+      "region": "Southeast Asia",
+      "tags": [
+        "bank-indonesia",
+        "philippines",
+        "rate-hike",
+        "emerging-markets"
+      ],
+      "source": {
+        "name": "Google News — Markets & Data",
+        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNcGVGNlBfUmp4aWJJdzJfYzRuZmRldkR4WS1oZWlHenBNbk5YRnlKd1E3Q21Ia1lUUS12TDFuU0VYZnNYQ0hXaVp4MnpFRk1mV0ppR0QtVXFqRVRzcnRfWGotTUZjNVA3ZzI0SExXbE5Fb0hRLWpIcW5lQU4yMG9YT1pXQXhqaDhDb3F3Y0w0TnFJeDMtWEFjYzY0Mjktd1J5d25hWnQyTnpHQzNuVTg3WW01RE9aWXpMdGsteGw1REVXdkN1eWhFVUNEcw?oc=5"
+      },
+      "publishedAt": "2026-06-18T03:33:00.000Z",
+      "imageUrl": null
+    },
+    {
       "id": "db43dfc7cc5d",
       "category": "central-banks",
       "headline": "ECB's Sleijpen says a repeat of 2022 inflation is unlikely but not ruled out",
@@ -322,79 +449,6 @@
         "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOem04Rm1YTC1rR1R6WWxYcnY2N0g3Qkw2VGZoak8zRFh0MlVnZmQxNFh4dDduZXJjdmFiODhOaE56X2RZX1U4Ynh4LXc4ekx3dXhaSWZ1UkhKTHhoTXo4Ti1XQjJFQmdsZGRkVWdMYmo4bjJWUU9kelhFdmxWcjlzZV9rc2JrdnZodndlUTVST09sYmZRSXM3TGZjenBLdUFCTzlpMGFabzFMUVNYTEhxaWg4SjR6QQ?oc=5"
       },
       "publishedAt": "2026-06-17T14:14:49.000Z",
-      "imageUrl": null
-    },
-    {
-      "id": "b9d24cc78f1a",
-      "category": "central-banks",
-      "headline": "Russian household inflation expectations ease to 12.4% in June",
-      "summary": "Russia's central bank reported a drop in households' inflation expectations, a small sign of cooling price pressure.",
-      "whyItMatters": "Lower expectations give the Russian central bank room to ease, which tends to weaken the rouble.",
-      "currencies": [
-        "RUB"
-      ],
-      "impact": "bearish",
-      "fxRelevance": 50,
-      "region": "Russia",
-      "tags": [
-        "russia",
-        "inflation",
-        "expectations"
-      ],
-      "source": {
-        "name": "Google News — Central Banks",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOb29Ta2JKeGUtMHozZld1ZUZqLWZzMmNaY3oxWEFqcHlDdGhmdVVmT2UybER1Ykh0Y3Zmd2FBbmhjVFV2bGlLazc3RUhRSkRHYlhUZ2lUSkkzS3QzMS1TU1YwaXRrV0h1Wm1ld25FSTN1ZkJBdnhMYl9VT2NST192M0FDVE5Md2pYcGdIaU1fZmlwdjNia0VEUzZBLVBiV0VRVXI0LWpFWV8zLWU2?oc=5"
-      },
-      "publishedAt": "2026-06-17T13:45:57.000Z",
-      "imageUrl": null
-    },
-    {
-      "id": "9b31484a0239",
-      "category": "central-banks",
-      "headline": "Chile's central bank trims growth forecast and lifts inflation view",
-      "summary": "Chile cut its 2026 GDP growth estimate while nudging up its inflation projection, a stagflationary tilt.",
-      "whyItMatters": "Weaker growth with firmer inflation is an awkward backdrop that tends to pressure the peso.",
-      "currencies": [
-        "CLP"
-      ],
-      "impact": "bearish",
-      "fxRelevance": 50,
-      "region": "Latin America",
-      "tags": [
-        "chile",
-        "gdp",
-        "inflation"
-      ],
-      "source": {
-        "name": "Google News — Central Banks",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNc1AyaEtMTnpEcVdiYW92d1RFOXQxX0ZCQk8yajB6YmFnWVFkakVJbVNsUnNXNkoxQ19yWXlXZDdBR0hFWk9NcDhmeExMNm1MWmdOaW9JV0ZXU1F4M0xzMmVac3lpcURFeWZ6cUdCZE11NkF5ZFY3ZGx2VGEtZmwxZnpQZFBKaEQ5aThaV1k0QWRWcFoyUXZ5UmxRSkdPcl94VzE3eXNIWERWeGZEMWV3X21HbEVocnVXWkhjTEVB?oc=5"
-      },
-      "publishedAt": "2026-06-17T13:32:09.000Z",
-      "imageUrl": null
-    },
-    {
-      "id": "a267df8221d7",
-      "category": "central-banks",
-      "headline": "Revolut wins UAE central bank licences for full digital banking",
-      "summary": "Revolut secured licences from the UAE central bank to offer full digital banking services in the Emirates.",
-      "whyItMatters": "More licensed digital banks in the Gulf means cheaper, faster ways to move money in and out of the region.",
-      "currencies": [
-        "AED"
-      ],
-      "impact": "neutral",
-      "fxRelevance": 45,
-      "region": "Middle East",
-      "tags": [
-        "revolut",
-        "digital-banking",
-        "uae",
-        "payments"
-      ],
-      "source": {
-        "name": "Google News — Central Banks",
-        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPOV8zN19VbkZUUFRyS041RHk5bU5NZEpmTm00VGFoX3FpU0Z4NjNlWXNMQUJvZl9OLUVOVHV4aDBGVnFIM0RFTnZYME51ODRncTJYa1V0LXR3M2JUVTRZaUd3RmhxT1hESVZPT2hvbXU4RlowQTdzOGpSTU0zTktKczBreUF4bWxEeTR2ajloUVZWLXNBQXd4ZFlrVHg3UGg5dHh5TlhoYVQ4Y3R3eWtxNnZibFJhNXk0ZlVnbEw2WHlJZWNpbDFTaW5qUE8?oc=5"
-      },
-      "publishedAt": "2026-06-17T14:21:23.000Z",
       "imageUrl": null
     },
     {
@@ -498,6 +552,31 @@
       "imageUrl": null
     },
     {
+      "id": "63bfd60c0c87",
+      "category": "fx-analysis",
+      "headline": "Pound steadies from a two-month low ahead of the Bank of England decision",
+      "summary": "Sterling recovered from its weakest level since early April as a softer dollar gave it room to bounce, with traders now focused on the Bank of England's interest-rate decision later today.",
+      "whyItMatters": "The Bank of England's decision could set the pound's direction, affecting the cost of UK travel, imports and money transfers.",
+      "currencies": [
+        "GBP"
+      ],
+      "impact": "neutral",
+      "fxRelevance": 70,
+      "region": "UK",
+      "tags": [
+        "pound",
+        "bank-of-england",
+        "gbp",
+        "rates"
+      ],
+      "source": {
+        "name": "FXStreet",
+        "url": "https://www.fxstreet.com/news/british-pound-recovers-from-two-month-low-ahead-of-boe-as-iran-peace-deal-weigh-on-usd-202606180116"
+      },
+      "publishedAt": "2026-06-18T01:16:56.000Z",
+      "imageUrl": null
+    },
+    {
       "id": "d174232a2f35",
       "category": "fx-analysis",
       "headline": "US retail sales jump 0.9% in May, beating expectations",
@@ -519,6 +598,31 @@
         "url": "https://investinglive.com/news/us-may-advance-retail-sales-09-vs-05-expected-20260617/"
       },
       "publishedAt": "2026-06-17T12:30:50.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "bb60ee671d77",
+      "category": "fx-analysis",
+      "headline": "Japan flags weak-yen burden on households but signals no imminent action",
+      "summary": "Chief Cabinet Secretary Minoru Kihara acknowledged that a weak yen raises costs for Japanese households, a slightly more dovish framing, but gave no fresh signal that the government is preparing to intervene.",
+      "whyItMatters": "Without a clear intervention warning, the yen could keep weakening, which lowers the cost of Japanese goods and travel for foreign-currency holders.",
+      "currencies": [
+        "JPY"
+      ],
+      "impact": "bearish",
+      "fxRelevance": 65,
+      "region": "Japan",
+      "tags": [
+        "yen",
+        "japan",
+        "intervention",
+        "jpy"
+      ],
+      "source": {
+        "name": "ForexLive",
+        "url": "https://investinglive.com/news/japans-kihara-flags-weak-yen-household-burden-but-offers-no-fresh-intervention-signal-20260618/"
+      },
+      "publishedAt": "2026-06-18T02:21:26.000Z",
       "imageUrl": null
     },
     {
@@ -546,55 +650,6 @@
       "imageUrl": null
     },
     {
-      "id": "b6a66c71114e",
-      "category": "fx-analysis",
-      "headline": "Canadian dollar near lows as oil slump and Fed outlook weigh",
-      "summary": "USD/CAD held around 1.4010 with the loonie pressured by falling oil and a cautious Fed backdrop.",
-      "whyItMatters": "Cheaper oil pulls the commodity-linked loonie down — the flip side of today's easing inflation story.",
-      "currencies": [
-        "CAD",
-        "USD"
-      ],
-      "impact": "bearish",
-      "fxRelevance": 65,
-      "region": "Canada",
-      "tags": [
-        "usdcad",
-        "oil",
-        "loonie"
-      ],
-      "source": {
-        "name": "FXStreet",
-        "url": "https://www.fxstreet.com/news/canadian-dollar-holds-near-recent-lows-as-oil-slump-fed-outlook-weigh-202606171245"
-      },
-      "publishedAt": "2026-06-17T12:45:09.000Z",
-      "imageUrl": null
-    },
-    {
-      "id": "b0573f86c207",
-      "category": "fx-analysis",
-      "headline": "Egyptian pound becomes the world's best-performing currency after a sharp rise",
-      "summary": "The Egyptian pound has rallied to become the world's top-performing currency recently, reflecting improved sentiment and inflows. Analysts are debating how durable the gains will prove.",
-      "whyItMatters": "A stronger pound makes imports and foreign debt cheaper for Egyptians and signals shifting confidence in the economy.",
-      "currencies": [
-        "EGP"
-      ],
-      "impact": "bullish",
-      "fxRelevance": 60,
-      "region": "Egypt",
-      "tags": [
-        "egp",
-        "emerging-markets",
-        "currency-rally"
-      ],
-      "source": {
-        "name": "Google News — Markets & Data",
-        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQLXVIaUxydFdJYld5N1NqSmpnZms0Sk43U3VQS2hPYThudmdYd0FGQ1lZNjRXMEZEQlAwdTR1OUVOTXZDQ21EMVZ3cHN3cHJZRVktellIT2EtWFBwSzJQQ2t1MzliekhpVU1RRWFOei1QT0pxeC1KSFB2cnlsSVVHOURXMnRYazZZRkh6VTBDbGZUczJBNnVoYUtVeFhBM29wcEhfYUFBQVhNb01GUkE?oc=5"
-      },
-      "publishedAt": "2026-06-17T14:02:05.000Z",
-      "imageUrl": null
-    },
-    {
       "id": "7642820a64dd",
       "category": "markets",
       "headline": "Oil prices fall sharply as Iran supply outlook improves",
@@ -618,6 +673,32 @@
         "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPUkp5N2RyU2owV2lCdHRUeDdJUURsc3NPVEttbHQ3VHFoTWJWNnpKdmRMQmdkSGxLelJuVnJIb09wdnk5ZmphbExseW5LVjF6bTVMMjlnTkNVZldINkRQbDRlWVJaZHI2c1MtbEczNndxNURIUHlSNWRqd2ZVSTRKdUctYkJCN1pJZS1OWnV6Vmc3XzJtcEszSXdFMk0?oc=5"
       },
       "publishedAt": "2026-06-17T07:12:44.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "b0d5d9eb0a94",
+      "category": "markets",
+      "headline": "Dollar holds near two-month high as Fed rate-hike bets grow and yen slides",
+      "summary": "The US dollar held close to a two-month high as traders raised bets that the Federal Reserve could still hike rates this year. The Japanese yen weakened further, sliding toward multi-year lows.",
+      "whyItMatters": "A stronger dollar makes travel, imports and dollar debt more expensive for those earning in other currencies, while the weak yen makes Japan cheaper to visit.",
+      "currencies": [
+        "USD",
+        "JPY"
+      ],
+      "impact": "bullish",
+      "fxRelevance": 80,
+      "region": "Global",
+      "tags": [
+        "dollar",
+        "yen",
+        "federal-reserve",
+        "rates"
+      ],
+      "source": {
+        "name": "Google News — Markets & Data",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQMXhMdkFib3NLc0ZGbGdQMkEyZDliQVlGdlhON2tLLXhFVUJpeGJFeFdHVkxiSVg4bFFhVi1hdVJraW1xMUhrN29YZVpHbG5sc18tbUhBejNTV2dkN3pjMmR2VDNVTmR3bjZYb2JMdXlxZ3ZGVnNjZ0ZobTF5UUg2d1lZMzIxdUxHcGsyRDlSakVvdEtMVUFQSWJBV3ZxS1d3Uy1hQW5Udllad9IBrwFBVV95cUxORk92SDZrS0VxUXFVM0UtTTh0OTlxZ3VGVkdmaDFrMHB0elpZdndPOWl6M3o1bDBZQ2V4WnR2Z2EzTFlfclY3MDVjWVR6M1RGcDhjZVBuQUllY2dnMGU3UFVwRFBIcXByak8wTGxBcVUzZXN4ZEZxb29uV1RlVEJQcGw0TU8wX3phYkRMSjQtdjJIRHRVX1hhdVAyQU5FTUdWVUJIT1pTMk5HbGlGMlYw?oc=5"
+      },
+      "publishedAt": "2026-06-18T01:39:00.000Z",
       "imageUrl": null
     },
     {
@@ -669,6 +750,31 @@
         "url": "https://www.fxstreet.com/news/gold-slumps-to-near-4-250-as-fed-holds-rates-but-flags-potential-hike-this-year-202606172318"
       },
       "publishedAt": "2026-06-17T23:18:36.000Z",
+      "imageUrl": null
+    },
+    {
+      "id": "33138084db2d",
+      "category": "markets",
+      "headline": "Rupee firms as peace deal cools oil, trimming remittance payouts",
+      "summary": "The Indian rupee rebounded as the US-Iran peace deal pushed oil prices lower, easing one of India's biggest import costs. The stronger rupee slightly reduces the payout on inbound remittances.",
+      "whyItMatters": "A firmer rupee means people sending money to India get fewer rupees per dollar, so timing transfers around these swings can matter.",
+      "currencies": [
+        "INR"
+      ],
+      "impact": "bullish",
+      "fxRelevance": 70,
+      "region": "India",
+      "tags": [
+        "rupee",
+        "india",
+        "remittances",
+        "oil"
+      ],
+      "source": {
+        "name": "Google News — Markets & Data",
+        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE51RndlV0s5RXB6T0cxbVN0a05tZ2liS3ZSaHBQN2FhSk5NRkNOSVhMaXIxRTRLUmZJclpEWm80VEdCOUhiSUZ2ZmdtQmNCVTk1cnNCVzFXbjE4eWtXekgyY041enM2QmFhcWJuenR6MGFBeG85RTNuYWlB?oc=5"
+      },
+      "publishedAt": "2026-06-18T00:09:05.000Z",
       "imageUrl": null
     },
     {
@@ -743,56 +849,6 @@
         "url": "https://news.google.com/rss/articles/CBMi9AJBVV95cUxPNlpBV3daQm8tZGdYMDYxcElkXzdoVnJpSkJsZS1YZXI3X3p3ZTJZVktXNUQwUWJ3b25MOFZRZ0lGYnN5ZDZxd21yS1Q5cE51TWFnZDdORmV1ZGwtdTJPejJWMmtocllmcGc5R0E2MmUtQ2xmSDdVX0hPNXZwTDZxcGpjMkMwY2NfUGE0VzliM1E4bnpDY2ttdXV0NWlFTWdMZzkzYl9VWXVKXzJVZ2JJQjYtRDB5d3RhcVN0dFJIWHBPcVVtcm4ySzZFaTRQT3RiWU1QZWVsbzNrRjZGYUE1OW5TenlEUVlZV2J0T05hd1ktYlBxeUN5Y0hfNFRrS0l4QUFhMXdGb2hDVWJsSTBGRjBkMkxQdUpxUmRicE1WR1hGTFlqZkc2NWpOOFNwTWZBcGw0YmZvR1drOUZaU3hPRDlpTm55N01JUjFOUjVWZ3A5cGNMaVlEcjhSelFFRTZIcG0weGE2dHhnUUtvdTQxQU9lTWs?oc=5"
       },
       "publishedAt": "2026-06-17T15:07:56.000Z",
-      "imageUrl": null
-    },
-    {
-      "id": "6d6fefab8dde",
-      "category": "markets",
-      "headline": "Indian rupee gains 31 paise as crude prices slide",
-      "summary": "The rupee strengthened as falling oil eased India's import-cost burden ahead of the Fed decision.",
-      "whyItMatters": "India imports most of its oil, so cheaper crude is a direct boost to the rupee — and to what your rupees buy.",
-      "currencies": [
-        "INR",
-        "USD"
-      ],
-      "impact": "bullish",
-      "fxRelevance": 65,
-      "region": "India",
-      "tags": [
-        "rupee",
-        "oil",
-        "india"
-      ],
-      "source": {
-        "name": "Google News — Markets & Data",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxObEcxdFQ0OTZacExwSEllY0NqOUt0Nk9RM24zb25jQ2d4RXpoZGZwRlY0b0tLQ3FHQS1lR2hJelE5RWRiaDNVektoLW9vVExZNjE0S05fT2Y4STAydGtjWUhBZnMzLXc0c0Y1a0EtR0EtbUlpT21rUGFPTTV5ZnFJYktLbWpFcUFRZnpZN2JqcE1hd21wYlk2UncyYnVyaVZfT3o5TzZhXzBucUI4SGt2YXhJNTRYdw?oc=5"
-      },
-      "publishedAt": "2026-06-17T06:15:32.000Z",
-      "imageUrl": null
-    },
-    {
-      "id": "5048d9b3c280",
-      "category": "markets",
-      "headline": "New Zealand economy grows 0.8% in the first quarter, just short of forecasts",
-      "summary": "New Zealand's economy expanded 0.8% in the first quarter, faster than the prior period but a touch below expectations, while the annual rate beat forecasts. The mixed read kept the New Zealand dollar supported.",
-      "whyItMatters": "Growth data shapes expectations for interest rates, a key driver of where the New Zealand dollar trades.",
-      "currencies": [
-        "NZD"
-      ],
-      "impact": "mixed",
-      "fxRelevance": 62,
-      "region": "New Zealand",
-      "tags": [
-        "nzd",
-        "gdp",
-        "data",
-        "new-zealand"
-      ],
-      "source": {
-        "name": "FXStreet",
-        "url": "https://www.fxstreet.com/news/08-new-zealands-gross-domestic-product-grows-less-than-expected-in-q1-202606172258"
-      },
-      "publishedAt": "2026-06-17T22:58:04.000Z",
       "imageUrl": null
     },
     {
