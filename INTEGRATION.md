@@ -145,15 +145,17 @@ Render order on screen, top to bottom:
 
 Render sections/tabs in **ascending `priority`**. Do not reorder — World News leading is a product decision.
 
-| priority | id | label | emoji |
+| priority | id | label | icon |
 |----------|----|----|----|
-| 1 | `world` | World News | 🌍 |
-| 2 | `central-banks` | Central Banks | 🏛️ |
-| 3 | `fx-analysis` | FX Analysis | 📈 |
-| 4 | `markets` | Market Movers | ⚡ |
-| 5 | `life` | Life & Money | 🎁 |
+| 1 | `world` | World News | `globe` |
+| 2 | `central-banks` | Central Banks | `bank` |
+| 3 | `fx-analysis` | FX Analysis | `trending-up` |
+| 4 | `markets` | Market Movers | `activity` |
+| 5 | `life` | Life & Money | `gift` |
 
-Each object: `{ id, label, priority, emoji, description }`. Use `emoji` as the fallback visual when an item has no image (§6). `description` is one-line section subtext if you want it.
+Each object: `{ id, label, priority, icon, description }`. `description` is one-line section subtext if you want it.
+
+**`icon` is a semantic name, not an asset — render it with your own line-icon set.** The feed deliberately ships no glyph or SVG; map each `icon` value (or just the stable `id`) to the matching line icon in your design system, so it inherits your stroke weight, theming, and dark mode. The names above are the common conventions (they line up with Lucide / Phosphor / SF Symbols equivalents — e.g. `bank` ≈ `landmark` / `building.columns`), but they're just labels: if your set uses different names, map them however you like — keying off `id` is perfectly fine. Use this same category icon as the fallback tile when an item has no image (§6). If you'd rather we host actual SVGs instead of naming icons, say so and we'll switch to an `iconUrl`.
 
 ---
 
@@ -220,7 +222,7 @@ Already ranked (category priority → relevance → recency) and capped at 8 per
 - `imageUrl` is **https or `null`**, sourced from the publisher's own feed image.
 - Many items have **no image** (`null`) — central-bank notices, wire links, etc.
 - Publisher CDNs can also **block hot-linking** (image request fails at runtime).
-- **In both cases, fall back to the category `emoji` tile** (🌍 / 🏛️ / 📈 / ⚡ / 🎁). Never show a broken-image placeholder. Treat images as a bonus, not a guarantee.
+- **In both cases, fall back to the category's line-icon tile** (the `icon` from §5, rendered with your own icon set). Never show a broken-image placeholder. Treat images as a bonus, not a guarantee.
 
 ---
 
@@ -236,7 +238,7 @@ interface Category {
   id: CategoryId;
   label: string;
   priority: number;   // render ascending
-  emoji: string;
+  icon: string;       // semantic line-icon name — render with your own set
   description: string;
 }
 
@@ -286,7 +288,7 @@ interface Feed {
 - [ ] **Fetch failed / timed out / `304` / older payload → keep showing the stored feed** (§2). Never blank the screen on a failed refresh.
 - [ ] **Never downgrade** — only replace the stored feed when the fetched `generatedAt` is strictly newer.
 - [ ] `brief === null` → hide the brief card.
-- [ ] `imageUrl === null` **or image fails to load** → category emoji tile.
+- [ ] `imageUrl === null` **or image fails to load** → category line-icon tile (your own asset, keyed off `icon`/`id`).
 - [ ] `currencies === []` → no currency chips (normal for Life & Money).
 - [ ] `pairsToWatch` / `calendar` can be `[]` → hide those rows.
 - [ ] `generatedAt` older than ~26h → optional subtle "updated yesterday" label; keep showing the content.
