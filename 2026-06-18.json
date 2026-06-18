@@ -1,8 +1,14 @@
 {
   "version": 1,
   "date": "2026-06-18",
-  "generatedAt": "2026-06-18T03:36:55.455Z",
+  "generatedAt": "2026-06-18T03:47:17.926Z",
   "enrichment": "ai",
+  "sentiment": {
+    "score": 18,
+    "label": "neutral",
+    "summary": "Mixed signals — no clear risk-on or risk-off tilt across currencies today.",
+    "basis": 16
+  },
   "brief": {
     "headline": "Hawkish Fed lifts the dollar as the US and Iran sign a peace deal",
     "summary": "The dollar is sitting near a two-month high after the Federal Reserve held rates but signalled it could still hike later this year, a hawkish surprise that knocked gold and equities lower. At the same time, the US and Iran formally signed a memorandum of understanding to end their war, easing Middle East tensions and helping oil-importing currencies like the Indian rupee. Attention now turns to the Bank of England's decision later today, after UK inflation refused to cool. The yen is the weak spot, near its lowest since mid-2024 and stoking talk of intervention, while the euro is steadier as eurozone core inflation came in hot. Elsewhere, Brazil cut rates again despite a worse inflation outlook, and the Egyptian pound has quietly become the world's best performer.",
