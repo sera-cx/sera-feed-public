@@ -1,7 +1,7 @@
 {
   "version": 1,
   "date": "2026-06-17",
-  "generatedAt": "2026-06-17T15:02:32.400Z",
+  "generatedAt": "2026-06-18T03:19:45.537Z",
   "enrichment": "ai",
   "brief": {
     "headline": "Fed day under a new chair, with oil finally cooling",
@@ -37,35 +37,35 @@
       "id": "world",
       "label": "World News",
       "priority": 1,
-      "emoji": "🌍",
+      "icon": "globe",
       "description": "Geopolitics, elections, trade and conflict — the world events that move currencies."
     },
     {
       "id": "central-banks",
       "label": "Central Banks",
       "priority": 2,
-      "emoji": "🏛️",
+      "icon": "bank",
       "description": "Rate decisions, interventions, QE and speeches from central banks anywhere in the world."
     },
     {
       "id": "fx-analysis",
       "label": "FX Analysis",
       "priority": 3,
-      "emoji": "📈",
+      "icon": "trending-up",
       "description": "Daily currency commentary and forecasts from banks and research desks."
     },
     {
       "id": "markets",
       "label": "Market Movers",
       "priority": 4,
-      "emoji": "⚡",
+      "icon": "activity",
       "description": "Economic data, commodities and risk sentiment with a direct line to FX."
     },
     {
       "id": "life",
       "label": "Life & Money",
       "priority": 5,
-      "emoji": "🎁",
+      "icon": "gift",
       "description": "Spend it well — gifts for loved ones, new tech worth buying, and travel where your money goes further."
     }
   ],
