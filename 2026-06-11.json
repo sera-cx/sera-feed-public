@@ -95,7 +95,10 @@
         "url": "https://www.theguardian.com/world/live/2026/jun/11/iran-war-news-us-strikes-donald-trump-stalled-peace-talks-middle-east-crisis"
       },
       "publishedAt": "2026-06-11T16:40:20.000Z",
-      "imageUrl": "https://i.guim.co.uk/img/media/ca44eae90cb40a5537c665c6d7d895e52ae8e977/350_0_4723_3777/master/4723.jpg?width=140&quality=85&auto=format&fit=max&s=62845779cc8376529cb27ee74820440e"
+      "imageUrl": "https://i.guim.co.uk/img/media/ca44eae90cb40a5537c665c6d7d895e52ae8e977/350_0_4723_3777/master/4723.jpg?width=140&quality=85&auto=format&fit=max&s=62845779cc8376529cb27ee74820440e",
+      "topics": [
+        "fx"
+      ]
     },
     {
       "id": "a44ce1f852ac",
@@ -119,7 +122,11 @@
         "url": "https://www.aljazeera.com/economy/2026/6/11/global-growth-to-slow-to-lowest-since-covid-due-to-iran-war-world-bank?traffic_source=rss"
       },
       "publishedAt": "2026-06-11T16:55:16.000Z",
-      "imageUrl": null
+      "imageUrl": null,
+      "topics": [
+        "economics",
+        "geopolitics"
+      ]
     },
     {
       "id": "ff0df2b7bff2",
@@ -143,7 +150,10 @@
         "url": "https://www.theguardian.com/politics/live/2026/jun/11/belfast-riots-hilary-benn-anti-immigrant-injured-police-latest-news-updates"
       },
       "publishedAt": "2026-06-11T16:59:33.000Z",
-      "imageUrl": "https://i.guim.co.uk/img/media/2183213bd4da74ac195bae6c04b812915541d15b/0_1223_3406_2725/master/3406.jpg?width=140&quality=85&auto=format&fit=max&s=012c1de2909326b87215245823b4b8d5"
+      "imageUrl": "https://i.guim.co.uk/img/media/2183213bd4da74ac195bae6c04b812915541d15b/0_1223_3406_2725/master/3406.jpg?width=140&quality=85&auto=format&fit=max&s=012c1de2909326b87215245823b4b8d5",
+      "topics": [
+        "economics"
+      ]
     },
     {
       "id": "e887a3f66e8e",
@@ -166,7 +176,10 @@
         "url": "https://www.theguardian.com/us-news/live/2026/jun/11/democrats-republicans-midterms-tech-laws-scotus-latest-news-updates"
       },
       "publishedAt": "2026-06-11T16:48:45.000Z",
-      "imageUrl": "https://i.guim.co.uk/img/media/f6287da7fd9bd90a7b12e08e76992e99d8a890bc/0_0_4583_3667/master/4583.jpg?width=140&quality=85&auto=format&fit=max&s=a4410cf1247c60d23748a3cc90d244f1"
+      "imageUrl": "https://i.guim.co.uk/img/media/f6287da7fd9bd90a7b12e08e76992e99d8a890bc/0_0_4583_3667/master/4583.jpg?width=140&quality=85&auto=format&fit=max&s=a4410cf1247c60d23748a3cc90d244f1",
+      "topics": [
+        "fx"
+      ]
     },
     {
       "id": "e088c5a4e67b",
@@ -191,7 +204,11 @@
         "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQNDlmM0U3cjRZTkhGal8ySmVWR3Uzd1p1bkpwVEs4RWo0UDd6Nnh5TDFPLW9WV1JqQTBIU3JfbzB5X2dHQmhYNGRWUkEtWU8yUFVwWEtlT3Q4d0QzYWV2OFdhRnlBN3RnTzZiZURtaEhBU3ZzQnU5WmtEcnk2b083ckxEbDNIeDV1?oc=5"
       },
       "publishedAt": "2026-06-11T16:58:50.000Z",
-      "imageUrl": null
+      "imageUrl": null,
+      "topics": [
+        "economics",
+        "geopolitics"
+      ]
     },
     {
       "id": "3a59de84bb7d",
@@ -215,7 +232,11 @@
         "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNcjZPQW5IQVFHZlFJUHdha1FLeE41NURUeWlVbF9UNFlTTU5yQmJ3WDhaeElRM3VlMmJ2Y1pXOVI0aDEtWEpvNTdOU3pVSnV3RFIyMnIwR0VySkJXa252SFl0X0FSbVU2QUJGcGNIUDNLS2dMandRb0laU0xIODZNaGJuM2Y1VTFWNmZKQ3Y2SU1sVFJmYkFRMnpFclJZUVlRNDZvNXdGODF0R0JXam9mekpn?oc=5"
       },
       "publishedAt": "2026-06-11T15:41:21.000Z",
-      "imageUrl": null
+      "imageUrl": null,
+      "topics": [
+        "economics",
+        "geopolitics"
+      ]
     },
     {
       "id": "0ce9a6a640fa",
@@ -239,7 +260,10 @@
         "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQSzNubDNZRXFUMHhKTXMzaS1ma3EySFFNTWJhdmNJTFJvcHM5X1FZanA3em8zc0FqVUhmRnU5eDhTUVFVajM2TmhiR0RJYnB5eHVUNmM0Q1hEbHJvRG13VHFsR0JsX0ZHM3M4Mjc2UUpvSU9DeU42RGlIeDQ3LXFTLXd6UC1FZlJaUkI5M3l2SDgzOFdMejg2bjJObkNFRGI5YnhjZHVPZ2Q0YjZlY2VLZkx6aEdOYjhDRHk3VGlxVjhPTng4aHdpaVJCUlBJSFNYTTBjWTFMOWFZOVBoSi04R2xn?oc=5"
       },
       "publishedAt": "2026-06-11T15:15:05.000Z",
-      "imageUrl": null
+      "imageUrl": null,
+      "topics": [
+        "economics"
+      ]
     },
     {
       "id": "a1d7904e4864",
@@ -263,7 +287,10 @@
         "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQbk5zbDZGMmd5Y1lvcmNPQUVqbHAyN1FnMXQyT2NIakNibVdwT2RZWE85NTNXQ2pkVjNESjZJbWhSNFNNUTI3TXd4SXBMU05BWDNaTGhFanpBOVBUVGhsXzZZaWRrb0hfX1RxZTA5TUY2TGRUMHJxT2lLclJZaGdDYmdDZk5QSEZRMEp1NGNoSjRQcDFxcDBfUVNkYVVBVEl3?oc=5"
       },
       "publishedAt": "2026-06-11T16:40:00.000Z",
-      "imageUrl": null
+      "imageUrl": null,
+      "topics": [
+        "fx"
+      ]
     },
     {
       "id": "d8c88f5d74ff",
@@ -286,7 +313,10 @@
         "url": "https://www.bankofengland.co.uk/markets/market-notices/2026/june/collateral-eligibility-in-the-smf-11-june-2026"
       },
       "publishedAt": "2026-06-11T16:00:00.000Z",
-      "imageUrl": null
+      "imageUrl": null,
+      "topics": [
+        "economics"
+      ]
     },
     {
       "id": "9de7cc7de4fa",
@@ -311,7 +341,11 @@
         "url": "https://www.fxstreet.com/news/japanese-yen-struggles-near-16050-as-intervention-fears-offset-us-dollar-strength-202606111602"
       },
       "publishedAt": "2026-06-11T16:02:45.000Z",
-      "imageUrl": null
+      "imageUrl": null,
+      "topics": [
+        "fx",
+        "geopolitics"
+      ]
     },
     {
       "id": "570354e61a47",
@@ -335,7 +369,11 @@
         "url": "https://www.fxstreet.com/news/bank-of-japan-gradual-normalisation-with-higher-jgb-yields-ing-202606111506"
       },
       "publishedAt": "2026-06-11T15:06:51.000Z",
-      "imageUrl": null
+      "imageUrl": null,
+      "topics": [
+        "fx",
+        "economics"
+      ]
     },
     {
       "id": "18c1abf56cd5",
@@ -360,7 +398,10 @@
         "url": "https://www.fxstreet.com/news/japanese-yen-pressure-persists-toward-162-against-us-dollar-scotiabank-202606111447"
       },
       "publishedAt": "2026-06-11T14:47:45.000Z",
-      "imageUrl": null
+      "imageUrl": null,
+      "topics": [
+        "fx"
+      ]
     },
     {
       "id": "bd62022c1bf9",
@@ -384,7 +425,11 @@
         "url": "https://www.fxstreet.com/news/australian-dollar-falls-to-two-month-low-after-hot-us-ppi-and-steady-jobless-claims-202606111558"
       },
       "publishedAt": "2026-06-11T15:58:45.000Z",
-      "imageUrl": null
+      "imageUrl": null,
+      "topics": [
+        "fx",
+        "economics"
+      ]
     },
     {
       "id": "1074e1f811ee",
@@ -408,7 +453,12 @@
         "url": "https://www.fxstreet.com/news/british-pound-slips-as-war-driven-ppi-fuels-us-dollar-rebound-202606111534"
       },
       "publishedAt": "2026-06-11T15:34:27.000Z",
-      "imageUrl": null
+      "imageUrl": null,
+      "topics": [
+        "fx",
+        "economics",
+        "geopolitics"
+      ]
     },
     {
       "id": "e7bd54ad37ad",
@@ -433,7 +483,10 @@
         "url": "https://www.fxstreet.com/news/canadian-dollar-downside-risk-against-us-dollar-as-boc-stays-patient-bbh-202606111456"
       },
       "publishedAt": "2026-06-11T14:56:23.000Z",
-      "imageUrl": null
+      "imageUrl": null,
+      "topics": [
+        "fx"
+      ]
     },
     {
       "id": "9d7785521a13",
@@ -457,7 +510,11 @@
         "url": "https://www.fxstreet.com/news/swiss-national-bank-policy-pause-and-fx-stance-nomura-202606111436"
       },
       "publishedAt": "2026-06-11T14:36:19.000Z",
-      "imageUrl": null
+      "imageUrl": null,
+      "topics": [
+        "fx",
+        "economics"
+      ]
     },
     {
       "id": "2108d65fc360",
@@ -482,7 +539,10 @@
         "url": "https://www.fxstreet.com/news/latam-fx-carry-resilience-versus-fed-repricing-bny-202606111526"
       },
       "publishedAt": "2026-06-11T15:26:00.000Z",
-      "imageUrl": null
+      "imageUrl": null,
+      "topics": [
+        "fx"
+      ]
     },
     {
       "id": "5054c88f9f47",
@@ -506,7 +566,10 @@
         "url": "https://www.aljazeera.com/video/counting-the-cost/2026/6/11/gold-is-now-the-top-reserve-asset-is-dollar-dominance-at-risk?traffic_source=rss"
       },
       "publishedAt": "2026-06-11T16:40:00.000Z",
-      "imageUrl": null
+      "imageUrl": null,
+      "topics": [
+        "fx"
+      ]
     },
     {
       "id": "f639206a7bf0",
@@ -530,7 +593,11 @@
         "url": "https://www.investing.com/news/economic-indicators/us-producer-prices-increase-more-than-expected-in-may-amid-jump-in-energy-costs-4737459"
       },
       "publishedAt": "2026-06-11T07:06:59.000Z",
-      "imageUrl": "https://i-invdn-com.investing.com/trkd-images/LYNXMPEM5A0WR_L.jpg"
+      "imageUrl": "https://i-invdn-com.investing.com/trkd-images/LYNXMPEM5A0WR_L.jpg",
+      "topics": [
+        "economics",
+        "geopolitics"
+      ]
     },
     {
       "id": "b6f6fab0880e",
@@ -556,7 +623,10 @@
         "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNaEdMVm5naGgxYlpRclA2b3duUTJSbDNqUWtuRFhsejkzdzF4QzIyWTNtMXhLa284MG5teFpsUDFnQ0E3TFVYb3B2dWQ3WDQxQXJ4M0Vhd1lIeHlfSlJNYzBRVjk3anR2VEhmbWtRb243Tld4Q0Rxb21OZEhMaGJKckJkMGxnQmxqbGIxY012b2ptNFRzYUZR?oc=5"
       },
       "publishedAt": "2026-06-11T15:57:25.000Z",
-      "imageUrl": null
+      "imageUrl": null,
+      "topics": [
+        "economics"
+      ]
     },
     {
       "id": "738369257da9",
@@ -582,7 +652,10 @@
         "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQb0RZekJqbVlHWXFQa1lKVzBFZ0FWU0lQLTJLTHp3V0RNdUNNM18tQmZqWlVPbUFwcmp1T25neHFDSGUyQ3oyQV9kTlgxUXhXbHZpWHY1b2dURGpRbVdOWTJiMXc2NHR0d3FIOHJBQXRfekpaNUx6NTdFWXMwTmd6MUxjUzl2VkkxTHRDV1JfYkNnMkNScDg5WDRfYXZXRFRySW5HMEloc0JCM2ZKNF9QTVY1dExBV1VwU3VOM3NJWjlEZmxWMjlvLQ?oc=5"
       },
       "publishedAt": "2026-06-11T09:09:23.000Z",
-      "imageUrl": null
+      "imageUrl": null,
+      "topics": [
+        "geopolitics"
+      ]
     },
     {
       "id": "d10ca2cf2a61",
@@ -607,7 +680,10 @@
         "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQN0ZObnQ4Nl96RUpaLXpNdXduVmZjOXV5c3FaMWhOdnl5MUhSTXRxbV9ObDNLRVZzZkxtRjZxRjFLVzJnSklSa3daQnlmd3pNRnlBQTJJaWpqT1FLLWZ3cnRGdkZCc2FqQnVDWDdtbWR3Q0dhcGh1WkQ2SkhQQ0ZkaW1fa0JNREJhNGtvRnlaZ3c1amRwempINFBfX1hNWEdkWnYyQ2txRGR5X01YTWxJV3ZKVVNRd1Iz?oc=5"
       },
       "publishedAt": "2026-06-11T10:49:00.000Z",
-      "imageUrl": null
+      "imageUrl": null,
+      "topics": [
+        "fx"
+      ]
     },
     {
       "id": "0ac5c0f5b3bb",
@@ -632,7 +708,10 @@
         "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNWDdUZlVSc0RKYlBNSzVQYnBNdTJObTJhLUduYWFYMmQ3bWI4U1dHLVgyc3FQNDAyVGRVNk5Ic0d1WWRTc3hKY19PSUdnU0k4ZElRbEh4VTZvbkhNSFp4WFdDMmRUMk85VjloX1p6dHFrel9XbVRpQXNoR0tPc3pYcg?oc=5"
       },
       "publishedAt": "2026-06-11T09:50:11.000Z",
-      "imageUrl": null
+      "imageUrl": null,
+      "topics": [
+        "fx"
+      ]
     },
     {
       "id": "cb693f955438",
@@ -656,7 +735,12 @@
         "url": "https://news.google.com/rss/articles/CBMisAJBVV95cUxPQm1JWnl4YlhoMm80NnN5UmdRcERLN1pSQUhZY2pfNWtydnNEZW1QRy12NEtSN1lsZGVXbktDSlZEUm9INzRKRXFwTGpUcTZsekpiT3FHV2lUY09RbEZYVDVReWtmamx6aV9TSklaUzFYci1uc3p4dGVrYXBpT01PNGp1QXB0VFJuaGJ1TzAzYlF5a1hSM2tBNWRmV2txcWxMTUJUb2xDampIT3N2N2FnWDlWYl9veWZOMFBLRGJZQWNjTEVCV3dobHJVdldJUDNRQnZnMFppNVM2SUdrU0I1RDZsQms2TUptNE1qMmNNUldBRVEzWjdCcXRrZGgxZWlRNVhwSnJpLTRaXzRjb2c5aFpOd3hHeXdacElVdmxsdU5xSWVCVm1EY3czbklrN2Zv?oc=5"
       },
       "publishedAt": "2026-06-11T16:34:11.000Z",
-      "imageUrl": null
+      "imageUrl": null,
+      "topics": [
+        "stablecoins",
+        "remittance",
+        "stocks"
+      ]
     },
     {
       "id": "bb101a81fc89",
@@ -681,7 +765,10 @@
         "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQUXNpUTFCcUNucVRYb2JXLWtmOVBuUmV2aVZINEE4eE5sZl9iMHpMQ3VoTzdZdkJHc0NUd3NPWEFXQ2UtMXRObEVHR1U4RFp2aDljY3NsRVFwVU5ZLWU2MEo4dEpob0JES0sxNkFtaWZWNkM4UTJudG9DTzhYY1FKLWQtbWc5aGFscV8yLXBPeFg?oc=5"
       },
       "publishedAt": "2026-06-11T11:25:00.000Z",
-      "imageUrl": null
+      "imageUrl": null,
+      "topics": [
+        "geopolitics"
+      ]
     },
     {
       "id": "3f8fc453a700",
@@ -702,7 +789,8 @@
         "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOSEVwQmMwMmMxSlIxbXgyMklmOG9vX2VBcDg5VFVJZWN2WFlZQllBTUNITnNSTjZ2WFN4eEVnYXNYNEQ1S1p6YmhhaENya3hJY1VDbDFiYUMwdnpiSF90UjVUMkRWajB0V1l0ZHN5MWRVQVZ2ZUtWVHhNSXNUU0R0UnVFdXZSWUdXclIxRlZEVnlCWGNO?oc=5"
       },
       "publishedAt": "2026-06-11T17:04:00.000Z",
-      "imageUrl": null
+      "imageUrl": null,
+      "topics": []
     },
     {
       "id": "9ce59d3b065f",
@@ -724,7 +812,8 @@
         "url": "https://www.theverge.com/gadgets/948292/nintendo-switch-2-deal-sale-woot"
       },
       "publishedAt": "2026-06-11T15:03:49.000Z",
-      "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/10/STKR001_NINTENDO_SWITCH_3_C.webp?quality=90&#038;strip=all&#038;crop=0,0,100,100"
+      "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/10/STKR001_NINTENDO_SWITCH_3_C.webp?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+      "topics": []
     },
     {
       "id": "600b464adb47",
@@ -745,7 +834,8 @@
         "url": "https://www.nytimes.com/wirecutter/gifts/best-gifts-for-coworkers/?utm_source=rss&utm_medium=feed&utm_campaign=RSS%20Feed"
       },
       "publishedAt": "2026-06-11T14:34:13.000Z",
-      "imageUrl": "https://cdn.thewirecutter.com/wp-content/media/2023/10/giftsforcoworkers-2048px-4662-3x2-1.jpg?auto=webp&quality=60&width=630"
+      "imageUrl": "https://cdn.thewirecutter.com/wp-content/media/2023/10/giftsforcoworkers-2048px-4662-3x2-1.jpg?auto=webp&quality=60&width=630",
+      "topics": []
     },
     {
       "id": "72668d3b665d",
@@ -769,7 +859,10 @@
         "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPaUFpeVBFOWhmSnJXN2ZHVkxQelo3U05qZk1DQUtWcjRMbkFndGd5SEJJZE5adkdyN3REWFFXX0ZvS3Q0SmYtcm1KXzJBTXlTZC1FbUtsbHIxVV9fcE9EaFdLRHQzMExhcUVmelk0YjdTUm5Cek9hMFFwbG5mMmNNS25iYS1jaFlwaEFldmY5Z2cwV3Y4RXlZSnZQbHdpQVJFdVZqdk1n?oc=5"
       },
       "publishedAt": "2026-06-11T16:14:58.000Z",
-      "imageUrl": null
+      "imageUrl": null,
+      "topics": [
+        "fx"
+      ]
     },
     {
       "id": "709471fa20c4",
@@ -791,7 +884,8 @@
         "url": "https://www.theverge.com/transportation/947974/waymo-premier-monthly-membership-perks-priority-cash-back"
       },
       "publishedAt": "2026-06-11T16:00:00.000Z",
-      "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/image_b9dbd0.png?quality=90&#038;strip=all&#038;crop=0,0,100,100"
+      "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/image_b9dbd0.png?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+      "topics": []
     },
     {
       "id": "d5dd5159bd39",
@@ -813,7 +907,8 @@
         "url": "https://www.theverge.com/column/948295/apple-tv-new-hbo"
       },
       "publishedAt": "2026-06-11T15:30:00.000Z",
-      "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/03/Severance_Photo_020912.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100"
+      "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/03/Severance_Photo_020912.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+      "topics": []
     },
     {
       "id": "de83d4862bc7",
@@ -835,7 +930,8 @@
         "url": "https://www.theverge.com/tech/948363/weather-channel-mobile-app-ios-android-pollen-forecast"
       },
       "publishedAt": "2026-06-11T15:02:33.000Z",
-      "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/weatherchannel1.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100"
+      "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/weatherchannel1.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+      "topics": []
     },
     {
       "id": "0576a12ff5ad",
@@ -857,7 +953,8 @@
         "url": "https://www.theverge.com/tech/948024/arturia-minilab-37-midi-controller-review"
       },
       "publishedAt": "2026-06-11T16:00:00.000Z",
-      "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/268579_Arturia_MiniLab_37_TOBrien_0004.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100"
+      "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/268579_Arturia_MiniLab_37_TOBrien_0004.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+      "topics": []
     }
   ]
 }
