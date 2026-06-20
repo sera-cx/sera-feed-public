@@ -1,7 +1,7 @@
 {
   "version": 1,
   "date": "2026-06-18",
-  "generatedAt": "2026-06-20T12:16:39.433Z",
+  "generatedAt": "2026-06-20T12:48:24.797Z",
   "enrichment": "ai",
   "sentiment": {
     "score": 25,
@@ -322,7 +322,7 @@
       ],
       "topics": [
         "geopolitics",
-        "policy"
+        "economics"
       ]
     },
     {
@@ -434,7 +434,7 @@
       ],
       "topics": [
         "rates",
-        "macro"
+        "economics"
       ]
     },
     {
@@ -473,7 +473,7 @@
       ],
       "topics": [
         "rates",
-        "policy"
+        "economics"
       ]
     },
     {
@@ -512,7 +512,7 @@
       ],
       "topics": [
         "rates",
-        "macro"
+        "economics"
       ]
     },
     {
@@ -551,7 +551,7 @@
       ],
       "topics": [
         "rates",
-        "macro"
+        "economics"
       ]
     },
     {
@@ -590,8 +590,7 @@
       ],
       "topics": [
         "rates",
-        "macro",
-        "policy"
+        "economics"
       ]
     },
     {
@@ -670,8 +669,7 @@
       "fxDriver": "policy-commentary",
       "countries": [],
       "topics": [
-        "policy",
-        "macro",
+        "economics",
         "geopolitics"
       ]
     },
@@ -711,7 +709,7 @@
       "topics": [
         "rates",
         "fx",
-        "policy"
+        "economics"
       ]
     },
     {
@@ -918,7 +916,7 @@
         "US"
       ],
       "topics": [
-        "macro",
+        "economics",
         "fx"
       ]
     },
@@ -958,7 +956,7 @@
       ],
       "topics": [
         "fx",
-        "policy"
+        "economics"
       ]
     },
     {
@@ -1000,7 +998,7 @@
         "US"
       ],
       "topics": [
-        "macro",
+        "economics",
         "fx"
       ]
     },
@@ -1050,7 +1048,7 @@
       ],
       "topics": [
         "geopolitics",
-        "macro"
+        "economics"
       ]
     },
     {
@@ -1256,7 +1254,7 @@
       "countries": [],
       "topics": [
         "rates",
-        "macro"
+        "economics"
       ]
     },
     {
@@ -1294,7 +1292,7 @@
       ],
       "topics": [
         "rates",
-        "macro"
+        "economics"
       ]
     },
     {
