@@ -196,6 +196,7 @@ Already ranked (category priority → relevance → recency) and capped at 8 per
   "fxDriver": "geopolitics",
   "fxRelevance": 95,
   "region": "Global",
+  "countries": ["US"],
   "tags": ["iran", "oil", "geopolitics", "safe-haven"],
   "source": { "name": "The Guardian World", "url": "https://www.theguardian.com/world/live/2026/jun/11/..." },
   "publishedAt": "2026-06-11T16:40:20.000Z",
@@ -217,6 +218,7 @@ Already ranked (category priority → relevance → recency) and capped at 8 per
   "fxDriver": "other",
   "fxRelevance": 70,
   "region": "Global",
+  "countries": [],
   "tags": ["fathers-day", "gifts"],
   "source": { "name": "Google News — Travel Deals", "url": "https://news.google.com/rss/articles/..." },
   "publishedAt": "2026-06-11T17:04:00.000Z",
@@ -236,7 +238,8 @@ Already ranked (category priority → relevance → recency) and capped at 8 per
 | `currencyImpacts` | `{code, direction}[]` | Direction (`up`/`down`/`unclear`) **per** currency in `currencies`, same order. Use to personalize per the user's currencies — see §6.3. `[]` for lifestyle. |
 | `fxDriver` | enum | What kind of catalyst (see §6.3) — optional filter/group/badge |
 | `fxRelevance` | int 0–100 | Optional: a subtle "hot" badge at ≥90 |
-| `region` | string | Short label ("US", "Eurozone", "Japan", "Global") — optional chip |
+| `region` | string | Human label ("US", "Eurozone", "Japan", "Global") — display chip |
+| `countries` | string[] (ISO 3166-1 α-2) | Countries the item concerns — match against the user's countries to personalize (§6.4). `[]` = globally relevant. |
 | `tags` | string[] (≤4) | Optional |
 | `source` | `{ name, url }` | **Attribution required.** Show `name`; tapping the card opens `url`. |
 | `publishedAt` | string (ISO 8601) | Relative time ("3h ago") |
@@ -309,6 +312,47 @@ These two per-item fields are what make this an FX feed rather than a headline l
 
 ---
 
+## 6.4 Personalize by country & corridor (the "For You" view)
+
+The feed is one global artifact — **personalization happens in the app**, which is the only side that knows the user. The feed just ships the metadata to make matching precise: each item's `countries` (ISO α-2) and `currencies` (ISO 4217). You hold the user's **country set** and **currency set**, and rank.
+
+**Build the user's sets** from what you already know — and make it two-sided, which is the whole point for a remittance app:
+
+```ts
+const userCountries = new Set([
+  user.residenceCountry,        // where they are (earning)
+  user.originCountry,           // where they're from (diaspora — optional)
+  ...user.corridors.map(c => c.destinationCountry),  // where they send
+]);
+const userCurrencies = new Set([
+  user.homeCurrency,
+  ...user.corridors.flatMap(c => [c.fromCurrency, c.toCurrency]),
+]);
+```
+
+**Score each item** — boost on overlap, keep global items eligible:
+
+```ts
+function personalScore(item: FeedItem): number {
+  let s = item.fxRelevance;                                   // 0–100 base
+  if (item.countries.some(c => userCountries.has(c))) s += 30;
+  if (item.currencies.some(c => userCurrencies.has(c))) s += 25;
+  // items with countries:[] AND currencies:[] are globally relevant —
+  // they keep their base score and still surface, just not boosted.
+  return s;
+}
+```
+
+Two good ways to surface it:
+- **A "For You" tab/section** sorted by `personalScore` — mixes categories, leads with what touches the user's money.
+- **Keep the category sections** (World News first) but within each, sort by `personalScore` so a PH-relevant item floats up for a Philippines user.
+
+Tie it to the per-currency direction for a concrete line: for a US→PH sender, an item with `currencyImpacts` containing `{ "PH"…, but really PHP }` → *"the peso is weakening — your transfer goes further."* (Look up the user's **send-to currency** in `currencyImpacts`.)
+
+**Don't** hard-filter to only the user's countries — users still want the big global stories (a Fed decision moves everyone's money). Boost, don't exclude. And keep all of this client-side: we never need to know who the user is, which keeps the feed cacheable and private.
+
+---
+
 ## 7. TypeScript types
 
 Copy-paste:
@@ -343,7 +387,8 @@ interface FeedItem {
   currencyImpacts: CurrencyImpact[];  // direction per currency, same order
   fxDriver: FxDriver;            // catalyst type
   fxRelevance: number;           // 0–100
-  region: string;
+  region: string;                // human label
+  countries: string[];           // ISO 3166-1 alpha-2; [] = global. See §6.4
   tags: string[];
   source: { name: string; url: string };
   publishedAt: string;           // ISO 8601
