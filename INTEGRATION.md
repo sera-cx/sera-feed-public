@@ -102,7 +102,8 @@ func loadFeed() async -> Feed? {
   "categories": [ /* Category[], see §5 — render order */ ],
   "items": [ /* FeedItem[], see §6 — pre-ranked, ≤8 per category */ ],
   "alerts": [ /* string[] — ids of push-worthy items, see §6.1; [] on quiet days */ ],
-  "currencyOutlook": [ /* CurrencyOutlook[] — daily movers board, see §6.2 */ ]
+  "currencyOutlook": [ /* CurrencyOutlook[] — daily movers board, see §6.2 */ ],
+  "currencyViews": [ /* CurrencyView[] — per-currency analysis, see §6.5 */ ]
 }
 ```
 
@@ -355,6 +356,27 @@ Tie it to the per-currency direction for a concrete line: for a US→PH sender, 
 
 ---
 
+## 6.5 `currencyViews` — per-currency analysis ("what the market is saying")
+
+A synthesized read on each well-covered currency: a **directional bias**, how strongly we hold it, a plain-language narrative, the drivers, and any **attributed** analyst forecasts. Great for a "Currencies" tab, or a detail screen when a user taps a currency chip. Always present, may be empty (only currencies with enough coverage that day get a view).
+
+```jsonc
+{
+  "code": "JPY",
+  "bias": "weakening",                 // strengthening | weakening | range-bound | mixed
+  "conviction": "high",                // low | medium | high — how strong/consistent the signal
+  "summary": "The yen sits near its weakest since July 2024. Even the BoJ's hike to 1.0% hasn't stemmed the slide while the gap to US rates stays wide — markets are watching for intervention.",
+  "drivers": ["wide US–Japan rate gap", "BoJ hike not enough", "intervention risk"],
+  "analystForecasts": ["Scotiabank: USD/JPY toward 162"]   // attributed third-party calls; [] if none
+}
+```
+
+- **Render:** a per-currency card — `bias` as a strengthening/weakening/range pill (↑/↓/↔), `conviction` as a small strength indicator, `summary` as the body, `drivers` as chips, `analystForecasts` as an "Analysts say" list. Pair with the user's corridor (§6.4): show their send-to currency's view first.
+- **It is analysis, not a forecast.** `bias` is a directional lean, **never a predicted rate level**. `analystForecasts` relays *third-party* (bank/research) calls **with attribution** — those may quote a number, but it's the analyst's, not ours. We never publish a house price target. Keep the "information, not advice" disclaimer especially visible here.
+- `analystForecasts` is often `[]` (only populated when an attributed forecast appears that day). `currencyViews` itself is `[]` on quiet days. Code for both.
+
+---
+
 ## 7. TypeScript types
 
 Copy-paste:
@@ -369,6 +391,14 @@ type FxDriver =
 
 interface CurrencyImpact { code: string; direction: FxDirection; }
 interface CurrencyOutlook { code: string; net: "up" | "down" | "mixed"; signals: number; }
+interface CurrencyView {
+  code: string;
+  bias: "strengthening" | "weakening" | "range-bound" | "mixed";
+  conviction: "low" | "medium" | "high";
+  summary: string;
+  drivers: string[];
+  analystForecasts: string[];   // attributed; may be []
+}
 
 interface Category {
   id: CategoryId;
@@ -426,6 +456,7 @@ interface Feed {
   items: FeedItem[];
   alerts: string[];              // ids of push-worthy items (subset of items)
   currencyOutlook: CurrencyOutlook[];  // daily movers board (derived)
+  currencyViews: CurrencyView[];       // per-currency analysis; may be []
 }
 ```
 
@@ -472,6 +503,7 @@ This is curated news and commentary, **not financial advice**. Keep a visible di
 **Enforcement (our side):** the feed is validated against a machine schema (`src/contract.ts`) on every build — a feed that doesn't conform is **never published**, so what you receive always matches this doc.
 
 ### Changelog
+- **v1.1 (2026-06-20)** — Additive: `currencyViews` (per-currency analysis, §6.5). New optional-to-consume field; no breaking change.
 - **v1 (2026-06-18)** — Frozen. Includes: `sentiment` dial, `brief`, category `icon` names (line icons), per-item `currencyImpacts` + `fxDriver` + `countries`, top-level `alerts` + `currencyOutlook`, and the persist/fallback contract (§2).
 
 ---
