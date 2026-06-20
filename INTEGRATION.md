@@ -505,6 +505,37 @@ interface Feed {
 
 ---
 
+## 8.5 Screen blueprint & UX states (build a *good* screen, not just a correct one)
+
+A suggested assembly — adapt to your design system, but the **states** below are the difference between correct and good.
+
+**Layout, top to bottom:**
+1. **Header** — "Feed" title, the `sentiment` pill (§3.1), and a quiet "Updated {relative time}" from `generatedAt`.
+2. **Daily Brief** card (§4) — pinned; hide if `brief` is null.
+3. **Movers strip** (optional) — `currencyOutlook` as small chips (`USD ↑` `JPY ↓`), horizontally scrollable. Tapping a chip deep-links to that currency's view.
+4. **Category sections** — in `priority` order (**World News first**), each with its item cards. Within a section, sort by the user's corridor relevance (§6.4) so their currencies float up.
+5. **Currencies tab/screen** (separate) — `currencyViews` (§6.5) as cards, each pairing the **bias + the live rate** (§3.2): *"JPY · weakening · USD/JPY 161.31"*, with drivers as chips and an "Analysts say" list.
+
+**The states that matter:**
+| State | Do this |
+|---|---|
+| **First paint** | Render the **stored** feed instantly (§2). Skeletons only on true cold start (nothing stored). |
+| **Refreshing** | Update in the background; never blank the screen while fetching. |
+| **Offline / fetch fails / 304 / older** | Keep showing the stored feed (§2). No error screen. |
+| **Stale (>26h)** | Keep the content; add a subtle "Updated yesterday"-style label. |
+| **No image** (≈40% of items) | Category line-icon tile — make it look **intentional** (brand color + icon), not a broken-image gap. |
+| **No rate** (USD base, or `rates` empty) | Hide the rate chip entirely — never show an empty/zero rate. |
+| **Empty section / `[]` arrays** | Hide the row/section quietly; don't render empty headers. |
+
+**Polish that users feel:**
+- **Impact direction = color *and* icon** (↑green / ↓red / –grey / ⇅amber). Never color alone — it fails for color-blind users and in bright sun.
+- **Tap targets:** item card → `source.url`; currency chip → that currency's view; alert/push → the specific item.
+- **Relative timestamps** ("3h ago"), not raw ISO.
+- **Label the rate exactly "Sera mid-market rate"** (§3.2) — and put the "information, not advice" disclaimer where the analysis and rate live, not just under the brief.
+- **Gold (`XAU`) and similar** can appear in `currencyOutlook`/impacts as a market signal — don't render it as a sendable currency or attach a transfer CTA.
+
+---
+
 ## 9. Compliance note
 
 This is curated news and commentary, **not financial advice**. Keep a visible disclaimer on the screen. Item summaries describe events and directional read-through; they never instruct the user to buy/sell or transact.
