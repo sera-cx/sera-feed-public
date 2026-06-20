@@ -397,20 +397,19 @@ A synthesized read on each well-covered currency: a **directional bias**, how st
 
 ---
 
-## 6.6 `topics` — controlled tags for your topic filters
+## 6.6 `topics` — controlled tags (personalization and/or filtering)
 
-Each item carries a `topics` array from a **fixed controlled vocabulary**, so your topic toggles filter reliably (don't filter on the free-form `tags` — those are descriptive, not controlled). An item can have several. The exact values:
+Each item carries a `topics` array from a **fixed controlled vocabulary** (not the free-form `tags`, which are descriptive). An item can have several. The exact values:
 
 ```
 fx · crypto · economics · rates · stocks · commodity · stablecoins · geopolitics · tech · remittance
 ```
 
-- **`economics`** is the combined **Macro & Policy** bucket — label the toggle **"Economics"**. It covers economic data (inflation, GDP, jobs) *and* government / central-bank policy, regulation, and fiscal news. (There is no separate `macro` or `policy` value — fold those two toggles into one "Economics".) `geopolitics` stays its own topic.
-- **Filter** by intersection: a topic toggle shows items whose `topics` include that value. Multi-select = union.
-- **Coverage is uneven by design** (it's an FX/transfer feed): `fx`, `rates`, `economics`, `geopolitics` are rich; `commodity`/`remittance` are moderate; `crypto`/`stablecoins` are growing (we just added dedicated sources — core to Sera); `stocks`/`tech` are intentionally sparse (only when they read through to FX). So expect some toggles to show fewer items — show a friendly "nothing here today" state rather than assuming a bug.
-- These are a **superset-safe enum** — if we add a topic later it's additive; your filter UI can hard-code the list above. Unknown values won't appear, but coding defensively (ignore an unrecognized topic) is free insurance.
-
-> This is the field that backs the "Topics" selector. Wire each toggle to its slug — and merge the old "Macro" + "Policy" toggles into one **"Economics"**.
+- **`economics`** is the combined **Macro & Policy** bucket — label any toggle for it **"Economics"**. It covers economic data (inflation, GDP, jobs) *and* government / central-bank policy, regulation, and fiscal news. (No separate `macro` or `policy` value.) `geopolitics` stays its own topic.
+- **Two valid ways to use this — your choice of UI:**
+  - **Personalization / ranking (the topic-preference selector):** the user picks topics they care about; you boost matching items in "For You." **No empty-state concern** — it just reweights ranking. (This is what the topic checkboxes drive.)
+  - **Filter chips (tap a topic → see only that topic):** a separate, optional UI. Filter by intersection (multi-select = union). **Here** coverage is uneven by design (`fx`/`rates`/`economics`/`geopolitics` rich; `stocks`/`tech` sparse; `crypto`/`stablecoins` growing), so a sparse chip can return little → show a friendly "nothing here today" state. If you're *not* building filter chips, ignore this.
+- **Superset-safe enum** — if we add a topic later it's additive; hard-code the list above and ignore any unrecognized value (free insurance).
 
 ---
 
@@ -574,7 +573,7 @@ This is curated news and commentary, **not financial advice**. Keep a visible di
 
 **What you should do to stay compatible:**
 - **Ignore unknown fields** — don't fail to parse if a new field appears.
-- **Read `version`** — it will stay `1`. If you ever see `2`, that's a breaking release; we'll give you the new spec and run both in parallel for a transition window, so nothing breaks overnight.
+- **Gate on `version === 1`** — this is the intended contract. The JSON `version` stays **`1`** for *every* additive change (the "v1.x" labels in this changelog are doc-only; the wire value does not change). **We bump it to `2` only for a breaking change** — and that's deliberately the signal for clients to **reject the payload and hold the last-good feed**. So gating on `version === 1` (additive passes, `2` rejected → hold last-good) is exactly the behavior we want; build on it. When a `2` is coming we'll give you the new spec ahead of time and run both in parallel.
 - Have a fallback branch for any enum (`default:` case) so an unexpected value degrades gracefully rather than crashing.
 
 **Enforcement (our side):** the feed is validated against a machine schema (`src/contract.ts`) on every build — a feed that doesn't conform is **never published**, so what you receive always matches this doc.
