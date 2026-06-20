@@ -259,6 +259,7 @@ Already ranked (category priority → relevance → recency) and capped at 8 per
 | `impact` | `bullish`\|`bearish`\|`neutral`\|`mixed` | At-a-glance badge for the **first** currency → arrow/color (↑green / ↓red / –grey / ⇅amber) |
 | `currencyImpacts` | `{code, direction}[]` | Direction (`up`/`down`/`unclear`) **per** currency in `currencies`, same order. Use to personalize per the user's currencies — see §6.3. `[]` when `currencies` is empty. |
 | `fxDriver` | enum | What kind of catalyst (see §6.3) — optional filter/group/badge |
+| `topics` | string[] | **Controlled topic tags for your topic filters** — see §6.6. An item can carry several. |
 | `fxRelevance` | int 0–100 | Optional: a subtle "hot" badge at ≥90 |
 | `region` | string | Human label ("US", "Eurozone", "Japan", "Global") — display chip |
 | `countries` | string[] (ISO 3166-1 α-2) | Countries the item concerns — match against the user's countries to personalize (§6.4). `[]` = globally relevant. |
@@ -396,6 +397,22 @@ A synthesized read on each well-covered currency: a **directional bias**, how st
 
 ---
 
+## 6.6 `topics` — controlled tags for your topic filters
+
+Each item carries a `topics` array from a **fixed controlled vocabulary**, so your topic toggles filter reliably (don't filter on the free-form `tags` — those are descriptive, not controlled). An item can have several. The exact values:
+
+```
+fx · crypto · macro · rates · stocks · commodity · stablecoins · geopolitics · tech · policy · remittance
+```
+
+- **Filter** by intersection: a topic toggle shows items whose `topics` include that value. Multi-select = union.
+- **Coverage is uneven by design** (it's an FX/transfer feed): `fx`, `rates`, `macro`, `geopolitics` are rich; `commodity`/`policy`/`remittance` are moderate; `crypto`/`stablecoins` are growing (we just added dedicated sources — core to Sera); `stocks`/`tech` are intentionally sparse (only when they read through to FX). So expect some toggles to show fewer items — show a friendly "nothing here today" state rather than assuming a bug.
+- These are a **superset-safe enum** — if we add a topic later it's additive; your filter UI can hard-code the list above. Unknown values won't appear, but coding defensively (ignore an unrecognized topic) is free insurance.
+
+> This is the field that backs the "Topics" selector. The values match it 1:1 — wire each toggle to its slug.
+
+---
+
 ## 7. TypeScript types
 
 Copy-paste:
@@ -446,6 +463,7 @@ interface FeedItem {
   fxDriver: FxDriver;            // catalyst type
   fxRelevance: number;           // 0–100
   region: string;                // human label
+  topics: string[];              // controlled topic tags for filters — see §6.6
   countries: string[];           // ISO 3166-1 alpha-2; [] = global. See §6.4
   tags: string[];
   source: { name: string; url: string };
@@ -561,6 +579,7 @@ This is curated news and commentary, **not financial advice**. Keep a visible di
 **Enforcement (our side):** the feed is validated against a machine schema (`src/contract.ts`) on every build — a feed that doesn't conform is **never published**, so what you receive always matches this doc.
 
 ### Changelog
+- **v1.3 (2026-06-20)** — Additive: per-item `topics` (controlled tags for the app's topic filters, §6.6). Also added stablecoin/crypto/remittance sources to back the on-brand topics. New optional-to-consume field; no breaking change.
 - **2026-06-20** — **Life & Money retired.** `categories` is now 4 (no `life`); no item has `category: "life"`. Schema unchanged (the enum still accepts `life`), so this is a *content* change, not a contract break — but drop the Life tab. Brief's `spendIdea` stays, now FX-themed ("your money goes further").
 - **v1.2 (2026-06-20)** — Additive: `rates` (live Sera mid-market rates, §3.2). New optional-to-consume field; no breaking change.
 - **v1.1 (2026-06-20)** — Additive: `currencyViews` (per-currency analysis, §6.5). New optional-to-consume field; no breaking change.
