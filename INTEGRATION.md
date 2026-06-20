@@ -2,6 +2,8 @@
 
 For the **sera.money** app team. Everything needed to build the Feed screen end to end. The endpoint is live now; no backend work is required on your side.
 
+> **Contract status: v1 — FROZEN (2026-06-18).** Build against this shape with confidence. See [Contract version & stability](#contract-version--stability) for the compatibility guarantee.
+
 ---
 
 ## 1. The endpoint
@@ -453,4 +455,25 @@ This is curated news and commentary, **not financial advice**. Keep a visible di
 
 ---
 
-*Questions or contract change requests: reply this week — we freeze the contract after that. To preview live data, just open the endpoint URL in a browser.*
+## Contract version & stability
+
+**This is contract `version: 1`, frozen 2026-06-18.** Build against the shape in this document with confidence.
+
+**Our guarantee within v1 — changes are additive only:**
+- We will **not** remove or rename a field, change a field's type, or repurpose an existing enum value.
+- We **may** add new optional fields, and add new values to the open-ended string fields (`region`, `tags`, `countries`, `currencies`). Treat those as open sets.
+- Enum fields with a fixed set today (`category`, `impact`, `currencyImpacts[].direction`, `fxDriver`, `sentiment.label`, `currencyOutlook[].net`, `enrichment`) won't gain new values under v1. If we ever need to, that's a v2.
+
+**What you should do to stay compatible:**
+- **Ignore unknown fields** — don't fail to parse if a new field appears.
+- **Read `version`** — it will stay `1`. If you ever see `2`, that's a breaking release; we'll give you the new spec and run both in parallel for a transition window, so nothing breaks overnight.
+- Have a fallback branch for any enum (`default:` case) so an unexpected value degrades gracefully rather than crashing.
+
+**Enforcement (our side):** the feed is validated against a machine schema (`src/contract.ts`) on every build — a feed that doesn't conform is **never published**, so what you receive always matches this doc.
+
+### Changelog
+- **v1 (2026-06-18)** — Frozen. Includes: `sentiment` dial, `brief`, category `icon` names (line icons), per-item `currencyImpacts` + `fxDriver` + `countries`, top-level `alerts` + `currencyOutlook`, and the persist/fallback contract (§2).
+
+---
+
+*To preview live data, open the endpoint URL in a browser. Breaking-change requests: let us know and we'll scope a v2 — v1 stays stable in the meantime.*
