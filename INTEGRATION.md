@@ -103,7 +103,8 @@ func loadFeed() async -> Feed? {
   "items": [ /* FeedItem[], see §6 — pre-ranked, ≤8 per category */ ],
   "alerts": [ /* string[] — ids of push-worthy items, see §6.1; [] on quiet days */ ],
   "currencyOutlook": [ /* CurrencyOutlook[] — daily movers board, see §6.2 */ ],
-  "currencyViews": [ /* CurrencyView[] — per-currency analysis, see §6.5 */ ]
+  "currencyViews": [ /* CurrencyView[] — per-currency analysis, see §6.5 */ ],
+  "rates": [ /* FxRate[] — live Sera mid-market rates, see §3.2 */ ]
 }
 ```
 
@@ -133,7 +134,24 @@ A small market-mood gauge for the top of the feed, derived from the day's items.
 - It's a **heuristic mood indicator, not a data feed** — safe-haven strength reads risk-off, higher-yield/EM strength reads risk-on, weighted by each item's relevance. Treat it as ambient color, not a number to trade on (the disclaimer covers it).
 - `basis` of 0 means a very quiet build → `score` 0 / `neutral`; render the neutral pill.
 
-`brief` is `null` when there's no fresh brief (e.g. a quiet build). **Hide the card entirely when null.**
+---
+
+## 3.2 `rates` — live Sera mid-market rates
+
+Top-level array of **live FX rates from Sera's own pricing**, USD-base, for the currencies present in the feed. Fetched at build time, so they're as-of `generatedAt`. This is what ties the news/analysis to the rate a user actually gets.
+
+```jsonc
+"rates": [
+  { "pair": "USD/PHP", "rate": 60.6871, "source": "wise", "ts": 0 },
+  { "pair": "USD/JPY", "rate": 161.305, "source": "wise", "ts": 0 }
+]
+```
+
+- **Join by the quote (right) side of `pair`** — e.g. attach `USD/JPY` to the JPY currency view / outlook / chip. Show it next to the analysis: *"JPY — weakening · USD/JPY 161.31"*.
+- ⚠️ **Label it exactly "Sera mid-market rate."** It's the Wise mid-market rate, which equals what the user gets **because Convert is fee-free at v1** — so it's accurate to call it the Sera rate, but don't call it a generic "market rate." If Sera ever adds a spread, this feed will expose a separate net-rate field and you'd switch to that; until then, "Sera mid-market rate" is correct.
+- **`source`**: `"wise"` = live; `"reference"` = fallback. If you want to be fully transparent, show a subtle "live"/"indicative" tag from this.
+- **May be `[]`** if the rates API was briefly unreachable at build time (rates are a bonus, never block the feed) → just hide the rate chip and show the analysis alone. Also `ts` is currently `0` (placeholder) — don't render it as a timestamp; use `generatedAt` for "as of".
+- This is a **rate, not a prediction** — it pairs naturally with the directional `currencyViews` (§6.5): "here's where it is, here's which way the news is leaning." Keep the "information, not advice" disclaimer nearby.
 
 ```json
 {
@@ -399,6 +417,12 @@ interface CurrencyView {
   drivers: string[];
   analystForecasts: string[];   // attributed; may be []
 }
+interface FxRate {
+  pair: string;                 // "USD/PHP"
+  rate: number;
+  source: string;               // "wise" (live) | "reference" (fallback)
+  ts: number;                   // placeholder 0 for now — use feed.generatedAt
+}
 
 interface Category {
   id: CategoryId;
@@ -457,6 +481,7 @@ interface Feed {
   alerts: string[];              // ids of push-worthy items (subset of items)
   currencyOutlook: CurrencyOutlook[];  // daily movers board (derived)
   currencyViews: CurrencyView[];       // per-currency analysis; may be []
+  rates: FxRate[];                     // live Sera mid-market rates; may be []
 }
 ```
 
@@ -503,6 +528,7 @@ This is curated news and commentary, **not financial advice**. Keep a visible di
 **Enforcement (our side):** the feed is validated against a machine schema (`src/contract.ts`) on every build — a feed that doesn't conform is **never published**, so what you receive always matches this doc.
 
 ### Changelog
+- **v1.2 (2026-06-20)** — Additive: `rates` (live Sera mid-market rates, §3.2). New optional-to-consume field; no breaking change.
 - **v1.1 (2026-06-20)** — Additive: `currencyViews` (per-currency analysis, §6.5). New optional-to-consume field; no breaking change.
 - **v1 (2026-06-18)** — Frozen. Includes: `sentiment` dial, `brief`, category `icon` names (line icons), per-item `currencyImpacts` + `fxDriver` + `countries`, top-level `alerts` + `currencyOutlook`, and the persist/fallback contract (§2).
 
