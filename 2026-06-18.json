@@ -1,7 +1,7 @@
 {
   "version": 1,
   "date": "2026-06-18",
-  "generatedAt": "2026-06-20T11:59:28.347Z",
+  "generatedAt": "2026-06-20T12:16:39.433Z",
   "enrichment": "ai",
   "sentiment": {
     "score": 25,
@@ -102,6 +102,9 @@
       "fxDriver": "geopolitics",
       "countries": [
         "US"
+      ],
+      "topics": [
+        "geopolitics"
       ]
     },
     {
@@ -149,6 +152,10 @@
         "US",
         "JP",
         "IN"
+      ],
+      "topics": [
+        "geopolitics",
+        "stocks"
       ]
     },
     {
@@ -184,6 +191,9 @@
       "fxDriver": "geopolitics",
       "countries": [
         "US"
+      ],
+      "topics": [
+        "geopolitics"
       ]
     },
     {
@@ -229,6 +239,9 @@
       "countries": [
         "US",
         "CA"
+      ],
+      "topics": [
+        "geopolitics"
       ]
     },
     {
@@ -268,6 +281,9 @@
       "fxDriver": "geopolitics",
       "countries": [
         "RU"
+      ],
+      "topics": [
+        "geopolitics"
       ]
     },
     {
@@ -303,6 +319,10 @@
       "fxDriver": "geopolitics",
       "countries": [
         "US"
+      ],
+      "topics": [
+        "geopolitics",
+        "policy"
       ]
     },
     {
@@ -337,6 +357,9 @@
       "fxDriver": "other",
       "countries": [
         "GB"
+      ],
+      "topics": [
+        "geopolitics"
       ]
     },
     {
@@ -371,6 +394,9 @@
       "fxDriver": "rate-decision",
       "countries": [
         "US"
+      ],
+      "topics": [
+        "rates"
       ]
     },
     {
@@ -405,6 +431,10 @@
       "fxDriver": "rate-decision",
       "countries": [
         "GB"
+      ],
+      "topics": [
+        "rates",
+        "macro"
       ]
     },
     {
@@ -440,6 +470,10 @@
       "fxDriver": "rate-decision",
       "countries": [
         "US"
+      ],
+      "topics": [
+        "rates",
+        "policy"
       ]
     },
     {
@@ -475,6 +509,10 @@
       "fxDriver": "rate-decision",
       "countries": [
         "GB"
+      ],
+      "topics": [
+        "rates",
+        "macro"
       ]
     },
     {
@@ -510,6 +548,10 @@
       "fxDriver": "rate-decision",
       "countries": [
         "BR"
+      ],
+      "topics": [
+        "rates",
+        "macro"
       ]
     },
     {
@@ -545,6 +587,11 @@
       "fxDriver": "rate-decision",
       "countries": [
         "BR"
+      ],
+      "topics": [
+        "rates",
+        "macro",
+        "policy"
       ]
     },
     {
@@ -586,6 +633,9 @@
       "countries": [
         "ID",
         "PH"
+      ],
+      "topics": [
+        "rates"
       ]
     },
     {
@@ -618,7 +668,12 @@
         }
       ],
       "fxDriver": "policy-commentary",
-      "countries": []
+      "countries": [],
+      "topics": [
+        "policy",
+        "macro",
+        "geopolitics"
+      ]
     },
     {
       "id": "08197b8cd954",
@@ -652,6 +707,11 @@
       "fxDriver": "rate-decision",
       "countries": [
         "US"
+      ],
+      "topics": [
+        "rates",
+        "fx",
+        "policy"
       ]
     },
     {
@@ -692,6 +752,10 @@
       "countries": [
         "JP",
         "US"
+      ],
+      "topics": [
+        "rates",
+        "fx"
       ]
     },
     {
@@ -731,6 +795,10 @@
       "fxDriver": "rate-decision",
       "countries": [
         "US"
+      ],
+      "topics": [
+        "rates",
+        "fx"
       ]
     },
     {
@@ -772,6 +840,9 @@
       "countries": [
         "JP",
         "US"
+      ],
+      "topics": [
+        "fx"
       ]
     },
     {
@@ -807,6 +878,10 @@
       "fxDriver": "rate-decision",
       "countries": [
         "GB"
+      ],
+      "topics": [
+        "rates",
+        "fx"
       ]
     },
     {
@@ -841,6 +916,10 @@
       "fxDriver": "economic-data",
       "countries": [
         "US"
+      ],
+      "topics": [
+        "macro",
+        "fx"
       ]
     },
     {
@@ -876,6 +955,10 @@
       "fxDriver": "intervention",
       "countries": [
         "JP"
+      ],
+      "topics": [
+        "fx",
+        "policy"
       ]
     },
     {
@@ -915,6 +998,10 @@
       "countries": [
         "NZ",
         "US"
+      ],
+      "topics": [
+        "macro",
+        "fx"
       ]
     },
     {
@@ -960,6 +1047,10 @@
       "countries": [
         "US",
         "CA"
+      ],
+      "topics": [
+        "geopolitics",
+        "macro"
       ]
     },
     {
@@ -1001,6 +1092,9 @@
       "countries": [
         "US",
         "JP"
+      ],
+      "topics": [
+        "rates"
       ]
     },
     {
@@ -1041,6 +1135,9 @@
       "countries": [
         "EG",
         "US"
+      ],
+      "topics": [
+        "commodity"
       ]
     },
     {
@@ -1081,6 +1178,9 @@
       "fxDriver": "rate-decision",
       "countries": [
         "US"
+      ],
+      "topics": [
+        "rates"
       ]
     },
     {
@@ -1116,6 +1216,10 @@
       "fxDriver": "geopolitics",
       "countries": [
         "IN"
+      ],
+      "topics": [
+        "geopolitics",
+        "remittance"
       ]
     },
     {
@@ -1149,7 +1253,11 @@
         }
       ],
       "fxDriver": "rate-decision",
-      "countries": []
+      "countries": [],
+      "topics": [
+        "rates",
+        "macro"
+      ]
     },
     {
       "id": "f4d87634a1b1",
@@ -1183,6 +1291,10 @@
       "fxDriver": "rate-decision",
       "countries": [
         "GB"
+      ],
+      "topics": [
+        "rates",
+        "macro"
       ]
     },
     {
@@ -1218,6 +1330,9 @@
       "fxDriver": "commodity",
       "countries": [
         "IN"
+      ],
+      "topics": [
+        "commodity"
       ]
     }
   ],
