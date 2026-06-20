@@ -1,7 +1,7 @@
 {
   "version": 1,
   "date": "2026-06-18",
-  "generatedAt": "2026-06-20T03:27:16.370Z",
+  "generatedAt": "2026-06-20T07:44:43.436Z",
   "enrichment": "ai",
   "sentiment": {
     "score": 25,
@@ -1486,6 +1486,79 @@
       "code": "XAU",
       "net": "down",
       "signals": 1
+    }
+  ],
+  "currencyViews": [
+    {
+      "code": "USD",
+      "bias": "strengthening",
+      "conviction": "high",
+      "summary": "The dollar is holding near a two-month high as traders lean toward the Fed staying higher for longer. The US–Iran peace framework trims some of its safe-haven support, but the rate story is winning out.",
+      "drivers": [
+        "hawkish Fed / rate-hike bets",
+        "easing safe-haven demand",
+        "firm US data"
+      ],
+      "analystForecasts": []
+    },
+    {
+      "code": "JPY",
+      "bias": "weakening",
+      "conviction": "high",
+      "summary": "The yen sits near its weakest since July 2024. Even the Bank of Japan's hike to 1.0% hasn't stemmed the slide while the gap to US rates stays wide — and the market is watching for possible intervention.",
+      "drivers": [
+        "wide US–Japan rate gap",
+        "BoJ hike not enough",
+        "intervention risk"
+      ],
+      "analystForecasts": []
+    },
+    {
+      "code": "EUR",
+      "bias": "mixed",
+      "conviction": "medium",
+      "summary": "The euro slipped below 1.1600 with the Fed in focus, and the signals conflict: the ECB's Sleijpen played down inflation risks, yet core inflation came in hotter than expected. Direction likely waits on the Fed.",
+      "drivers": [
+        "Fed in focus",
+        "ECB less alarmed on inflation",
+        "hot core inflation"
+      ],
+      "analystForecasts": []
+    },
+    {
+      "code": "INR",
+      "bias": "strengthening",
+      "conviction": "medium",
+      "summary": "The rupee firmed toward 94.29 as the US–Iran deal pushed oil lower. Cheaper crude eases India's biggest import cost, taking pressure off the currency.",
+      "drivers": [
+        "falling oil",
+        "easing Middle East tensions"
+      ],
+      "analystForecasts": []
+    },
+    {
+      "code": "BRL",
+      "bias": "weakening",
+      "conviction": "medium",
+      "summary": "The real is under pressure after the central bank cut its key rate a third straight time to 14.25% while warning that fiscal stimulus could blunt policy. A hawkish Fed adds emerging-market outflow risk.",
+      "drivers": [
+        "central bank rate cuts",
+        "fiscal stimulus concerns",
+        "hawkish Fed / EM outflows"
+      ],
+      "analystForecasts": []
+    },
+    {
+      "code": "GBP",
+      "bias": "range-bound",
+      "conviction": "low",
+      "summary": "Sterling steadied off a two-month low ahead of the Bank of England. UK inflation held steady rather than cooling, keeping the rate decision genuinely live — so the pound is waiting on the BoE.",
+      "drivers": [
+        "BoE decision pending",
+        "steady UK inflation",
+        "political noise"
+      ],
+      "analystForecasts": []
     }
   ]
 }
