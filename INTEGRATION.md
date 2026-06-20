@@ -165,7 +165,7 @@ Top-level array of **live FX rates from Sera's own pricing**, USD-base, for the 
     "UK monthly GDP data due Friday morning",
     "Bank of Japan decision expected Tuesday — a 25bp hike is widely tipped"
   ],
-  "spendIdea": "Father's Day is ten days out (21 June) — Esquire's tested gift list plus a rare $15-off Nintendo Switch 2 deal cover dad and the family without blowing the budget.",
+  "spendIdea": "The yen's at multi-month lows — if Japan's on your list, your money stretches noticeably further right now.",
   "transferTip": "With the BoJ on Tuesday and the Fed next week, avoid locking in big transfers right around central bank announcements — quieter windows usually price better."
 }
 ```
@@ -176,7 +176,7 @@ Top-level array of **live FX rates from Sera's own pricing**, USD-base, for the 
 | `summary` | string (3–5 sentences) | Card body |
 | `pairsToWatch` | `{ pair, note }[]` (2–4) | A small list/row of pairs, `note` as subtext. May be `[]`. |
 | `calendar` | string[] (0–4) | Bulleted "today" list. May be `[]`. |
-| `spendIdea` | string | The casual Life & Money line — give it a distinct, lighter treatment |
+| `spendIdea` | string | A warm "your money goes further" line tied to an FX move (e.g. weak yen → cheaper Japan trip) — give it a distinct, lighter treatment |
 | `transferTip` | string | Practical money-movement note — natural spot for a "Send money" CTA |
 
 ---
@@ -191,9 +191,10 @@ Render sections/tabs in **ascending `priority`**. Do not reorder — World News 
 | 2 | `central-banks` | Central Banks | `bank` |
 | 3 | `fx-analysis` | FX Analysis | `trending-up` |
 | 4 | `markets` | Market Movers | `activity` |
-| 5 | `life` | Life & Money | `gift` |
 
 Each object: `{ id, label, priority, icon, description }`. `description` is one-line section subtext if you want it.
+
+> **`life` (Life & Money) was retired** — the feed no longer produces it, so `categories` has these **4** entries and no item has `category: "life"`. The value remains valid in the schema enum (a feed *could* contain it without failing validation), so keep your `default`/unknown-category branch — but you don't need a Life tab.
 
 **`icon` is a semantic name, not an asset — render it with your own line-icon set.** The feed deliberately ships no glyph or SVG; map each `icon` value (or just the stable `id`) to the matching line icon in your design system, so it inherits your stroke weight, theming, and dark mode. The names above are the common conventions (they line up with Lucide / Phosphor / SF Symbols equivalents — e.g. `bank` ≈ `landmark` / `building.columns`), but they're just labels: if your set uses different names, map them however you like — keying off `id` is perfectly fine. Use this same category icon as the fallback tile when an item has no image (§6). If you'd rather we host actual SVGs instead of naming icons, say so and we'll switch to an `iconUrl`.
 
@@ -225,24 +226,24 @@ Already ranked (category priority → relevance → recency) and capped at 8 per
 }
 ```
 
-**Lifestyle item (no currencies, no image):**
+**Item with no image (icon fallback) — central-bank story:**
 ```json
 {
-  "id": "3f8fc453a700",
-  "category": "life",
-  "headline": "Esquire's Father's Day gift picks dad will actually love",
-  "summary": "Esquire's editors round up tested gift ideas for Father's Day on 21 June, across a wide range of budgets.",
-  "whyItMatters": "Ten days out is the sweet spot — order now and skip the panic-buying premium.",
-  "currencies": [],
-  "impact": "neutral",
-  "currencyImpacts": [],
-  "fxDriver": "other",
-  "fxRelevance": 70,
-  "region": "Global",
-  "countries": [],
-  "tags": ["fathers-day", "gifts"],
-  "source": { "name": "Google News — Travel Deals", "url": "https://news.google.com/rss/articles/..." },
-  "publishedAt": "2026-06-11T17:04:00.000Z",
+  "id": "4e4126bbf23e",
+  "category": "central-banks",
+  "headline": "UK inflation unexpectedly holds steady ahead of the BoE decision",
+  "summary": "British inflation came in flat rather than cooling further, complicating the Bank of England's rate call due shortly.",
+  "whyItMatters": "Stickier inflation makes BoE cuts harder to justify, a near-term support for the pound.",
+  "currencies": ["GBP"],
+  "impact": "bullish",
+  "currencyImpacts": [{ "code": "GBP", "direction": "up" }],
+  "fxDriver": "rate-decision",
+  "fxRelevance": 85,
+  "region": "UK",
+  "countries": ["GB"],
+  "tags": ["uk-inflation", "boe", "cpi"],
+  "source": { "name": "Bloomberg", "url": "https://www.bloomberg.com/..." },
+  "publishedAt": "2026-06-18T14:47:00.000Z",
   "imageUrl": null
 }
 ```
@@ -254,9 +255,9 @@ Already ranked (category priority → relevance → recency) and capped at 8 per
 | `headline` | string (≤90) | Card title |
 | `summary` | string | What happened, 1–2 sentences |
 | `whyItMatters` | string | The "so what" — **give it visual emphasis** (it's the value of the feed) |
-| `currencies` | string[] (ISO 4217) | Render as chips, most-affected first. **Can be `[]`** (lifestyle). |
+| `currencies` | string[] (ISO 4217) | Render as chips, most-affected first. **Can be `[]`** (rare — a story with no clear single currency). |
 | `impact` | `bullish`\|`bearish`\|`neutral`\|`mixed` | At-a-glance badge for the **first** currency → arrow/color (↑green / ↓red / –grey / ⇅amber) |
-| `currencyImpacts` | `{code, direction}[]` | Direction (`up`/`down`/`unclear`) **per** currency in `currencies`, same order. Use to personalize per the user's currencies — see §6.3. `[]` for lifestyle. |
+| `currencyImpacts` | `{code, direction}[]` | Direction (`up`/`down`/`unclear`) **per** currency in `currencies`, same order. Use to personalize per the user's currencies — see §6.3. `[]` when `currencies` is empty. |
 | `fxDriver` | enum | What kind of catalyst (see §6.3) — optional filter/group/badge |
 | `fxRelevance` | int 0–100 | Optional: a subtle "hot" badge at ≥90 |
 | `region` | string | Human label ("US", "Eurozone", "Japan", "Global") — display chip |
@@ -277,7 +278,7 @@ Already ranked (category priority → relevance → recency) and capped at 8 per
 
 ## 6.1 `alerts` — push-notification candidates
 
-Top-level `alerts` is an array of **item `id`s** the feed considers significant enough to push (high FX relevance, non-lifestyle). It's a subset of `items` — look each id up in the list you already have; no duplicated data.
+Top-level `alerts` is an array of **item `id`s** the feed considers significant enough to push (high FX relevance). It's a subset of `items` — look each id up in the list you already have; no duplicated data.
 
 ```jsonc
 "alerts": ["28c649b824d7", "08197b8cd954"]   // [] on a quiet day
@@ -327,7 +328,7 @@ These two per-item fields are what make this an FX feed rather than a headline l
 - `direction`: `up` (strengthens) / `down` (weakens) / `unclear`. Entry order matches `currencies`. The first entry always agrees with `impact`.
 - **This is the hook for corridor personalization.** sera.money knows each user's currencies — look them up here to tailor the line: for a USD→JPY sender, `JPY: down` → *"the yen is weakening — your transfer goes further."* You can also sort or badge items by relevance to the user's own currencies.
 
-**`fxDriver`** is the catalyst type — one of: `rate-decision`, `intervention`, `economic-data`, `geopolitics`, `commodity`, `capital-flows`, `policy-commentary`, `other` (lifestyle). Use it to group ("Rate decisions today"), filter, or icon-badge cards, and to help users learn what actually moves money.
+**`fxDriver`** is the catalyst type — one of: `rate-decision`, `intervention`, `economic-data`, `geopolitics`, `commodity`, `capital-flows`, `policy-commentary`, `other` (catch-all). Use it to group ("Rate decisions today"), filter, or icon-badge cards, and to help users learn what actually moves money.
 
 > Backfill note: items enriched before these fields existed have a best-effort `currencyImpacts` (primary currency only; others `unclear`) and an inferred `fxDriver`. Items from current builds are fully reasoned. Code defensively (`unclear` and `other` are always valid).
 
@@ -400,7 +401,8 @@ A synthesized read on each well-covered currency: a **directional bias**, how st
 Copy-paste:
 
 ```ts
-type CategoryId = "world" | "central-banks" | "fx-analysis" | "markets" | "life";
+// "life" is retired (never emitted) but still validates; keep a default branch.
+type CategoryId = "world" | "central-banks" | "fx-analysis" | "markets";
 type Impact = "bullish" | "bearish" | "neutral" | "mixed";
 type FxDirection = "up" | "down" | "unclear";
 type FxDriver =
@@ -495,7 +497,7 @@ interface Feed {
 - [ ] `sentiment` is always present (§3.1) — render the dial/pill from `label`; `basis: 0` → neutral.
 - [ ] `brief === null` → hide the brief card.
 - [ ] `imageUrl === null` **or image fails to load** → category line-icon tile (your own asset, keyed off `icon`/`id`).
-- [ ] `currencies === []` → no currency chips (normal for Life & Money).
+- [ ] `currencies === []` → no currency chips (rare — a story with no single clear currency).
 - [ ] `pairsToWatch` / `calendar` can be `[]` → hide those rows.
 - [ ] `generatedAt` older than ~26h → optional subtle "updated yesterday" label; keep showing the content.
 - [ ] Empty `items` (rare) → friendly empty state, keep the brief if present.
@@ -559,6 +561,7 @@ This is curated news and commentary, **not financial advice**. Keep a visible di
 **Enforcement (our side):** the feed is validated against a machine schema (`src/contract.ts`) on every build — a feed that doesn't conform is **never published**, so what you receive always matches this doc.
 
 ### Changelog
+- **2026-06-20** — **Life & Money retired.** `categories` is now 4 (no `life`); no item has `category: "life"`. Schema unchanged (the enum still accepts `life`), so this is a *content* change, not a contract break — but drop the Life tab. Brief's `spendIdea` stays, now FX-themed ("your money goes further").
 - **v1.2 (2026-06-20)** — Additive: `rates` (live Sera mid-market rates, §3.2). New optional-to-consume field; no breaking change.
 - **v1.1 (2026-06-20)** — Additive: `currencyViews` (per-currency analysis, §6.5). New optional-to-consume field; no breaking change.
 - **v1 (2026-06-18)** — Frozen. Includes: `sentiment` dial, `brief`, category `icon` names (line icons), per-item `currencyImpacts` + `fxDriver` + `countries`, top-level `alerts` + `currencyOutlook`, and the persist/fallback contract (§2).
