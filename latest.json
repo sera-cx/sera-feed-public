@@ -1,7 +1,7 @@
 {
   "version": 1,
   "date": "2026-06-18",
-  "generatedAt": "2026-06-20T07:44:43.436Z",
+  "generatedAt": "2026-06-20T08:58:10.104Z",
   "enrichment": "ai",
   "sentiment": {
     "score": 25,
@@ -1559,6 +1559,80 @@
         "political noise"
       ],
       "analystForecasts": []
+    }
+  ],
+  "rates": [
+    {
+      "pair": "USD/BRL",
+      "rate": 5.151099999820926,
+      "source": "wise",
+      "ts": 0
+    },
+    {
+      "pair": "USD/CAD",
+      "rate": 1.4152500000039874,
+      "source": "wise",
+      "ts": 0
+    },
+    {
+      "pair": "USD/EGP",
+      "rate": 49.92,
+      "source": "wise",
+      "ts": 0
+    },
+    {
+      "pair": "USD/EUR",
+      "rate": 0.8719919999745162,
+      "source": "wise",
+      "ts": 0
+    },
+    {
+      "pair": "USD/GBP",
+      "rate": 0.7557149999924798,
+      "source": "wise",
+      "ts": 0
+    },
+    {
+      "pair": "USD/IDR",
+      "rate": 17819,
+      "source": "wise",
+      "ts": 0
+    },
+    {
+      "pair": "USD/INR",
+      "rate": 94.3664,
+      "source": "wise",
+      "ts": 0
+    },
+    {
+      "pair": "USD/JPY",
+      "rate": 161.30500000216085,
+      "source": "wise",
+      "ts": 0
+    },
+    {
+      "pair": "USD/NOK",
+      "rate": 9.6983,
+      "source": "wise",
+      "ts": 0
+    },
+    {
+      "pair": "USD/NZD",
+      "rate": 1.74201,
+      "source": "wise",
+      "ts": 0
+    },
+    {
+      "pair": "USD/PHP",
+      "rate": 60.6871,
+      "source": "wise",
+      "ts": 0
+    },
+    {
+      "pair": "USD/RUB",
+      "rate": 73.00000000366941,
+      "source": "wise",
+      "ts": 0
     }
   ]
 }
