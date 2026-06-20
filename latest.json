@@ -1,7 +1,7 @@
 {
   "version": 1,
   "date": "2026-06-18",
-  "generatedAt": "2026-06-18T04:53:26.101Z",
+  "generatedAt": "2026-06-20T03:27:16.370Z",
   "enrichment": "ai",
   "sentiment": {
     "score": 25,
@@ -106,7 +106,10 @@
           "direction": "down"
         }
       ],
-      "fxDriver": "geopolitics"
+      "fxDriver": "geopolitics",
+      "countries": [
+        "US"
+      ]
     },
     {
       "id": "1861ec8d8854",
@@ -148,7 +151,12 @@
           "direction": "unclear"
         }
       ],
-      "fxDriver": "geopolitics"
+      "fxDriver": "geopolitics",
+      "countries": [
+        "US",
+        "JP",
+        "IN"
+      ]
     },
     {
       "id": "c124b36f820b",
@@ -180,7 +188,10 @@
           "direction": "up"
         }
       ],
-      "fxDriver": "geopolitics"
+      "fxDriver": "geopolitics",
+      "countries": [
+        "US"
+      ]
     },
     {
       "id": "da7faf9c2b8d",
@@ -221,7 +232,11 @@
           "direction": "unclear"
         }
       ],
-      "fxDriver": "geopolitics"
+      "fxDriver": "geopolitics",
+      "countries": [
+        "US",
+        "CA"
+      ]
     },
     {
       "id": "d514ebd9184b",
@@ -257,7 +272,10 @@
           "direction": "unclear"
         }
       ],
-      "fxDriver": "geopolitics"
+      "fxDriver": "geopolitics",
+      "countries": [
+        "RU"
+      ]
     },
     {
       "id": "0483e8f84627",
@@ -289,7 +307,10 @@
           "direction": "unclear"
         }
       ],
-      "fxDriver": "geopolitics"
+      "fxDriver": "geopolitics",
+      "countries": [
+        "US"
+      ]
     },
     {
       "id": "a0d603113d61",
@@ -320,7 +341,10 @@
           "direction": "unclear"
         }
       ],
-      "fxDriver": "other"
+      "fxDriver": "other",
+      "countries": [
+        "GB"
+      ]
     },
     {
       "id": "28c649b824d7",
@@ -351,7 +375,10 @@
           "direction": "unclear"
         }
       ],
-      "fxDriver": "rate-decision"
+      "fxDriver": "rate-decision",
+      "countries": [
+        "US"
+      ]
     },
     {
       "id": "4e4126bbf23e",
@@ -382,7 +409,10 @@
           "direction": "up"
         }
       ],
-      "fxDriver": "rate-decision"
+      "fxDriver": "rate-decision",
+      "countries": [
+        "GB"
+      ]
     },
     {
       "id": "8bf92e758df3",
@@ -414,7 +444,10 @@
           "direction": "unclear"
         }
       ],
-      "fxDriver": "rate-decision"
+      "fxDriver": "rate-decision",
+      "countries": [
+        "US"
+      ]
     },
     {
       "id": "f5e73da17b14",
@@ -446,7 +479,10 @@
           "direction": "unclear"
         }
       ],
-      "fxDriver": "rate-decision"
+      "fxDriver": "rate-decision",
+      "countries": [
+        "GB"
+      ]
     },
     {
       "id": "68a201030b4a",
@@ -478,7 +514,10 @@
           "direction": "down"
         }
       ],
-      "fxDriver": "rate-decision"
+      "fxDriver": "rate-decision",
+      "countries": [
+        "BR"
+      ]
     },
     {
       "id": "d415ce92fe45",
@@ -510,7 +549,10 @@
           "direction": "down"
         }
       ],
-      "fxDriver": "rate-decision"
+      "fxDriver": "rate-decision",
+      "countries": [
+        "BR"
+      ]
     },
     {
       "id": "5d349ae83fed",
@@ -547,7 +589,11 @@
           "direction": "unclear"
         }
       ],
-      "fxDriver": "rate-decision"
+      "fxDriver": "rate-decision",
+      "countries": [
+        "ID",
+        "PH"
+      ]
     },
     {
       "id": "db43dfc7cc5d",
@@ -578,7 +624,8 @@
           "direction": "down"
         }
       ],
-      "fxDriver": "policy-commentary"
+      "fxDriver": "policy-commentary",
+      "countries": []
     },
     {
       "id": "08197b8cd954",
@@ -609,7 +656,10 @@
           "direction": "unclear"
         }
       ],
-      "fxDriver": "rate-decision"
+      "fxDriver": "rate-decision",
+      "countries": [
+        "US"
+      ]
     },
     {
       "id": "c52c35663edf",
@@ -645,7 +695,11 @@
           "direction": "unclear"
         }
       ],
-      "fxDriver": "rate-decision"
+      "fxDriver": "rate-decision",
+      "countries": [
+        "JP",
+        "US"
+      ]
     },
     {
       "id": "73da477f7b19",
@@ -681,7 +735,10 @@
           "direction": "unclear"
         }
       ],
-      "fxDriver": "rate-decision"
+      "fxDriver": "rate-decision",
+      "countries": [
+        "US"
+      ]
     },
     {
       "id": "5235861f4dfc",
@@ -718,7 +775,11 @@
           "direction": "unclear"
         }
       ],
-      "fxDriver": "intervention"
+      "fxDriver": "intervention",
+      "countries": [
+        "JP",
+        "US"
+      ]
     },
     {
       "id": "63bfd60c0c87",
@@ -750,7 +811,10 @@
           "direction": "unclear"
         }
       ],
-      "fxDriver": "rate-decision"
+      "fxDriver": "rate-decision",
+      "countries": [
+        "GB"
+      ]
     },
     {
       "id": "d174232a2f35",
@@ -781,7 +845,10 @@
           "direction": "up"
         }
       ],
-      "fxDriver": "economic-data"
+      "fxDriver": "economic-data",
+      "countries": [
+        "US"
+      ]
     },
     {
       "id": "bb60ee671d77",
@@ -813,7 +880,10 @@
           "direction": "down"
         }
       ],
-      "fxDriver": "intervention"
+      "fxDriver": "intervention",
+      "countries": [
+        "JP"
+      ]
     },
     {
       "id": "2e252f1e54ca",
@@ -848,7 +918,11 @@
           "direction": "unclear"
         }
       ],
-      "fxDriver": "economic-data"
+      "fxDriver": "economic-data",
+      "countries": [
+        "NZ",
+        "US"
+      ]
     },
     {
       "id": "7642820a64dd",
@@ -889,7 +963,11 @@
           "direction": "unclear"
         }
       ],
-      "fxDriver": "geopolitics"
+      "fxDriver": "geopolitics",
+      "countries": [
+        "US",
+        "CA"
+      ]
     },
     {
       "id": "b0d5d9eb0a94",
@@ -926,7 +1004,11 @@
           "direction": "unclear"
         }
       ],
-      "fxDriver": "rate-decision"
+      "fxDriver": "rate-decision",
+      "countries": [
+        "US",
+        "JP"
+      ]
     },
     {
       "id": "115622ca6656",
@@ -962,7 +1044,11 @@
           "direction": "unclear"
         }
       ],
-      "fxDriver": "commodity"
+      "fxDriver": "commodity",
+      "countries": [
+        "EG",
+        "US"
+      ]
     },
     {
       "id": "e46adf6107f8",
@@ -999,7 +1085,10 @@
           "direction": "unclear"
         }
       ],
-      "fxDriver": "rate-decision"
+      "fxDriver": "rate-decision",
+      "countries": [
+        "US"
+      ]
     },
     {
       "id": "33138084db2d",
@@ -1031,7 +1120,10 @@
           "direction": "up"
         }
       ],
-      "fxDriver": "geopolitics"
+      "fxDriver": "geopolitics",
+      "countries": [
+        "IN"
+      ]
     },
     {
       "id": "38a4a6aed940",
@@ -1063,7 +1155,8 @@
           "direction": "up"
         }
       ],
-      "fxDriver": "rate-decision"
+      "fxDriver": "rate-decision",
+      "countries": []
     },
     {
       "id": "f4d87634a1b1",
@@ -1094,7 +1187,10 @@
           "direction": "unclear"
         }
       ],
-      "fxDriver": "rate-decision"
+      "fxDriver": "rate-decision",
+      "countries": [
+        "GB"
+      ]
     },
     {
       "id": "45667ab37e42",
@@ -1126,7 +1222,10 @@
           "direction": "up"
         }
       ],
-      "fxDriver": "commodity"
+      "fxDriver": "commodity",
+      "countries": [
+        "IN"
+      ]
     },
     {
       "id": "a4830f083028",
@@ -1150,7 +1249,8 @@
       "publishedAt": "2026-06-17T14:12:57.000Z",
       "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/268513_Amazon_Prime_Day_artwork_4.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "currencyImpacts": [],
-      "fxDriver": "other"
+      "fxDriver": "other",
+      "countries": []
     },
     {
       "id": "0aaed9dc7413",
@@ -1174,7 +1274,8 @@
       "publishedAt": "2026-06-17T13:00:41.000Z",
       "imageUrl": "https://cdn.thewirecutter.com/wp-content/media/2026/06/ROUNDUP-FATHERS-DAY-2026-DEALS-3x2-2.jpg?auto=webp&quality=60&width=630",
       "currencyImpacts": [],
-      "fxDriver": "other"
+      "fxDriver": "other",
+      "countries": []
     },
     {
       "id": "28adf38dc2c8",
@@ -1198,7 +1299,8 @@
       "publishedAt": "2026-06-17T13:21:15.000Z",
       "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/09/257943_Airpods_Pro3_AKrales_0133.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "currencyImpacts": [],
-      "fxDriver": "other"
+      "fxDriver": "other",
+      "countries": []
     },
     {
       "id": "91ea66aaf476",
@@ -1222,7 +1324,10 @@
       "publishedAt": "2026-06-17T14:30:00.000Z",
       "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/24803826/Screenshot_2023_07_22_at_5.52.08_PM.png?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "currencyImpacts": [],
-      "fxDriver": "other"
+      "fxDriver": "other",
+      "countries": [
+        "US"
+      ]
     },
     {
       "id": "437edc03bd65",
@@ -1247,7 +1352,8 @@
       "publishedAt": "2026-06-17T21:42:21.000Z",
       "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/09/257981_Techwoven_AJohnson_0002.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "currencyImpacts": [],
-      "fxDriver": "other"
+      "fxDriver": "other",
+      "countries": []
     },
     {
       "id": "d04cb7319435",
@@ -1272,7 +1378,8 @@
       "publishedAt": "2026-06-17T20:57:10.000Z",
       "imageUrl": "https://cdn.thewirecutter.com/wp-content/media/2025/09/BEST-WINDOWS-LAPTOPS-8871-3x2-1.jpg?auto=webp&quality=60&width=630",
       "currencyImpacts": [],
-      "fxDriver": "other"
+      "fxDriver": "other",
+      "countries": []
     },
     {
       "id": "4ad8bada7f99",
@@ -1296,7 +1403,8 @@
       "publishedAt": "2026-06-17T14:00:00.000Z",
       "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/TOYSTORY5-ONLINE-USE_t110.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "currencyImpacts": [],
-      "fxDriver": "other"
+      "fxDriver": "other",
+      "countries": []
     },
     {
       "id": "ad6e11dc0b94",
@@ -1320,7 +1428,8 @@
       "publishedAt": "2026-06-17T13:00:00.000Z",
       "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/Jackery-FridgeGuard-Placement.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "currencyImpacts": [],
-      "fxDriver": "other"
+      "fxDriver": "other",
+      "countries": []
     }
   ],
   "alerts": [
