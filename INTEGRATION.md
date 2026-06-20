@@ -402,14 +402,15 @@ A synthesized read on each well-covered currency: a **directional bias**, how st
 Each item carries a `topics` array from a **fixed controlled vocabulary**, so your topic toggles filter reliably (don't filter on the free-form `tags` — those are descriptive, not controlled). An item can have several. The exact values:
 
 ```
-fx · crypto · macro · rates · stocks · commodity · stablecoins · geopolitics · tech · policy · remittance
+fx · crypto · economics · rates · stocks · commodity · stablecoins · geopolitics · tech · remittance
 ```
 
+- **`economics`** is the combined **Macro & Policy** bucket — label the toggle **"Economics"**. It covers economic data (inflation, GDP, jobs) *and* government / central-bank policy, regulation, and fiscal news. (There is no separate `macro` or `policy` value — fold those two toggles into one "Economics".) `geopolitics` stays its own topic.
 - **Filter** by intersection: a topic toggle shows items whose `topics` include that value. Multi-select = union.
-- **Coverage is uneven by design** (it's an FX/transfer feed): `fx`, `rates`, `macro`, `geopolitics` are rich; `commodity`/`policy`/`remittance` are moderate; `crypto`/`stablecoins` are growing (we just added dedicated sources — core to Sera); `stocks`/`tech` are intentionally sparse (only when they read through to FX). So expect some toggles to show fewer items — show a friendly "nothing here today" state rather than assuming a bug.
+- **Coverage is uneven by design** (it's an FX/transfer feed): `fx`, `rates`, `economics`, `geopolitics` are rich; `commodity`/`remittance` are moderate; `crypto`/`stablecoins` are growing (we just added dedicated sources — core to Sera); `stocks`/`tech` are intentionally sparse (only when they read through to FX). So expect some toggles to show fewer items — show a friendly "nothing here today" state rather than assuming a bug.
 - These are a **superset-safe enum** — if we add a topic later it's additive; your filter UI can hard-code the list above. Unknown values won't appear, but coding defensively (ignore an unrecognized topic) is free insurance.
 
-> This is the field that backs the "Topics" selector. The values match it 1:1 — wire each toggle to its slug.
+> This is the field that backs the "Topics" selector. Wire each toggle to its slug — and merge the old "Macro" + "Policy" toggles into one **"Economics"**.
 
 ---
 
@@ -579,7 +580,7 @@ This is curated news and commentary, **not financial advice**. Keep a visible di
 **Enforcement (our side):** the feed is validated against a machine schema (`src/contract.ts`) on every build — a feed that doesn't conform is **never published**, so what you receive always matches this doc.
 
 ### Changelog
-- **v1.3 (2026-06-20)** — Additive: per-item `topics` (controlled tags for the app's topic filters, §6.6). Also added stablecoin/crypto/remittance sources to back the on-brand topics. New optional-to-consume field; no breaking change.
+- **v1.3 (2026-06-20)** — Additive: per-item `topics` (controlled tags for the app's topic filters, §6.6). Also added stablecoin/crypto/remittance sources to back the on-brand topics. Topic vocabulary merges Macro + Policy into one `economics` value (label it "Economics"); geopolitics stays separate. New optional-to-consume field; no breaking change.
 - **2026-06-20** — **Life & Money retired.** `categories` is now 4 (no `life`); no item has `category: "life"`. Schema unchanged (the enum still accepts `life`), so this is a *content* change, not a contract break — but drop the Life tab. Brief's `spendIdea` stays, now FX-themed ("your money goes further").
 - **v1.2 (2026-06-20)** — Additive: `rates` (live Sera mid-market rates, §3.2). New optional-to-consume field; no breaking change.
 - **v1.1 (2026-06-20)** — Additive: `currencyViews` (per-currency analysis, §6.5). New optional-to-consume field; no breaking change.
