@@ -25,6 +25,14 @@ GET https://sera-cx.github.io/sera-feed-public/2026-06-11.json
 
 > **Read the base URL from remote config — do not hard-code it.** We will move the feed to `https://feed.sera.money/latest.json` later; with the host in config that's a flip, not an app release.
 
+**Public JSON Schema** (draft 2020-12):
+
+```
+GET https://sera-cx.github.io/sera-feed-public/schema/feed-v1.schema.json
+```
+
+The schema describes the additive minimum shared by all immutable v1 archives, including artifacts published before the 2026-06-18 freeze. The repository validator additionally requires the frozen full profile for `latest.json` and current archives, and verifies cross-file invariants such as alert references and `latest.json`/archive equality.
+
 ---
 
 ## 2. Store the feed locally and fall back to it  ⭐ required
@@ -576,9 +584,10 @@ This is curated news and commentary, **not financial advice**. Keep a visible di
 - **Gate on `version === 1`** — this is the intended contract. The JSON `version` stays **`1`** for *every* additive change (the "v1.x" labels in this changelog are doc-only; the wire value does not change). **We bump it to `2` only for a breaking change** — and that's deliberately the signal for clients to **reject the payload and hold the last-good feed**. So gating on `version === 1` (additive passes, `2` rejected → hold last-good) is exactly the behavior we want; build on it. When a `2` is coming we'll give you the new spec ahead of time and run both in parallel.
 - Have a fallback branch for any enum (`default:` case) so an unexpected value degrades gracefully rather than crashing.
 
-**Enforcement (our side):** the feed is validated against a machine schema (`src/contract.ts`) on every build — a feed that doesn't conform is **never published**, so what you receive always matches this doc.
+**Enforcement (our side):** every publication is checked against the public schema plus deterministic semantic rules in `scripts/validate-feed.mjs`. CI also rejects edits, deletion, or renaming of an existing dated archive. A feed that fails these gates is **never published**, so what you receive matches this document while historical v1 artifacts remain immutable.
 
 ### Changelog
+- **2026-08-19** — Published the v1 JSON Schema and repository-local structural, semantic, alias, and archive-immutability validation gates. No wire-format change.
 - **v1.3 (2026-06-20)** — Additive: per-item `topics` (controlled tags for the app's topic filters, §6.6). Also added stablecoin/crypto/remittance sources to back the on-brand topics. Topic vocabulary merges Macro + Policy into one `economics` value (label it "Economics"); geopolitics stays separate. New optional-to-consume field; no breaking change.
 - **2026-06-20** — **Life & Money retired.** `categories` is now 4 (no `life`); no item has `category: "life"`. Schema unchanged (the enum still accepts `life`), so this is a *content* change, not a contract break — but drop the Life tab. Brief's `spendIdea` stays, now FX-themed ("your money goes further").
 - **v1.2 (2026-06-20)** — Additive: `rates` (live Sera mid-market rates, §3.2). New optional-to-consume field; no breaking change.
