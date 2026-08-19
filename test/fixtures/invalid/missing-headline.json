@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "date": "2026-08-19",
+  "generatedAt": "2026-08-19T04:00:00.000Z",
+  "enrichment": "ai",
+  "sentiment": {
+    "score": 0,
+    "label": "neutral",
+    "summary": "No directional signal.",
+    "basis": 1
+  },
+  "brief": null,
+  "categories": [
+    {
+      "id": "world",
+      "label": "World News",
+      "priority": 1,
+      "icon": "globe",
+      "description": "Global events moving currencies."
+    }
+  ],
+  "items": [
+    {
+      "id": "0123456789ab",
+      "category": "world",
+      "summary": "This item deliberately has no headline.",
+      "whyItMatters": "It proves structural validation fails.",
+      "currencies": [],
+      "impact": "neutral",
+      "currencyImpacts": [],
+      "fxDriver": "other",
+      "fxRelevance": 10,
+      "region": "Global",
+      "topics": ["fx"],
+      "countries": [],
+      "tags": [],
+      "source": {
+        "name": "Example News",
+        "url": "https://example.com/missing-headline"
+      },
+      "publishedAt": "2026-08-19T03:00:00.000Z",
+      "imageUrl": null
+    }
+  ],
+  "alerts": [],
+  "currencyOutlook": [],
+  "currencyViews": [],
+  "rates": []
+}

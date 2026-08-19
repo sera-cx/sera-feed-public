@@ -1,0 +1,36 @@
+name: Validate feed
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install pinned dependencies
+        run: npm ci
+
+      - name: Run tests and validate all artifacts
+        run: npm run check
+
+      - name: Reject changes to existing archives
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_REF: origin/${{ github.base_ref }}
+        run: npm run validate -- --changed-since "$BASE_REF"

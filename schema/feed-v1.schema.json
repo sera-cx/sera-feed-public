@@ -1,0 +1,275 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sera-cx.github.io/sera-feed-public/schema/feed-v1.schema.json",
+  "title": "Sera public feed v1 archival contract",
+  "description": "The additive minimum contract shared by all immutable v1 archives. The publication validator applies the frozen full-profile requirements to current artifacts.",
+  "type": "object",
+  "required": [
+    "version",
+    "date",
+    "generatedAt",
+    "enrichment",
+    "brief",
+    "categories",
+    "items"
+  ],
+  "properties": {
+    "version": { "const": 1 },
+    "date": { "type": "string", "format": "date" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "enrichment": { "enum": ["ai", "heuristic", "mixed"] },
+    "sentiment": { "$ref": "#/$defs/sentiment" },
+    "brief": {
+      "anyOf": [
+        { "$ref": "#/$defs/dailyBrief" },
+        { "type": "null" }
+      ]
+    },
+    "categories": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/category" }
+    },
+    "items": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/feedItem" }
+    },
+    "alerts": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/itemId" }
+    },
+    "currencyOutlook": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/currencyOutlook" }
+    },
+    "currencyViews": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/currencyView" }
+    },
+    "rates": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/fxRate" }
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "itemId": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{12}$"
+    },
+    "currencyCode": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$"
+    },
+    "countryCode": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$"
+    },
+    "httpsUrl": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://"
+    },
+    "legacyHttpsUrl": {
+      "description": "Compatibility shape for pre-freeze image URLs that may contain HTML-encoded query separators.",
+      "type": "string",
+      "pattern": "^https://"
+    },
+    "sentiment": {
+      "type": "object",
+      "required": ["score", "label", "summary", "basis"],
+      "properties": {
+        "score": { "type": "number", "minimum": -100, "maximum": 100 },
+        "label": { "enum": ["risk-on", "risk-off", "neutral"] },
+        "summary": { "$ref": "#/$defs/nonEmptyString" },
+        "basis": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": true
+    },
+    "pairToWatch": {
+      "type": "object",
+      "required": ["pair", "note"],
+      "properties": {
+        "pair": { "type": "string", "pattern": "^[A-Z]{3}/[A-Z]{3}$" },
+        "note": { "$ref": "#/$defs/nonEmptyString" }
+      },
+      "additionalProperties": true
+    },
+    "dailyBrief": {
+      "type": "object",
+      "required": ["headline", "summary", "pairsToWatch", "calendar", "spendIdea", "transferTip"],
+      "properties": {
+        "headline": { "type": "string", "minLength": 1, "maxLength": 70 },
+        "summary": { "$ref": "#/$defs/nonEmptyString" },
+        "pairsToWatch": {
+          "type": "array",
+          "maxItems": 4,
+          "items": { "$ref": "#/$defs/pairToWatch" }
+        },
+        "calendar": {
+          "type": "array",
+          "maxItems": 4,
+          "items": { "$ref": "#/$defs/nonEmptyString" }
+        },
+        "spendIdea": { "$ref": "#/$defs/nonEmptyString" },
+        "transferTip": { "$ref": "#/$defs/nonEmptyString" }
+      },
+      "additionalProperties": true
+    },
+    "category": {
+      "type": "object",
+      "required": ["id", "label", "priority", "description"],
+      "properties": {
+        "id": { "enum": ["world", "central-banks", "fx-analysis", "markets", "life"] },
+        "label": { "$ref": "#/$defs/nonEmptyString" },
+        "priority": { "type": "integer", "minimum": 1 },
+        "icon": { "$ref": "#/$defs/nonEmptyString" },
+        "emoji": { "$ref": "#/$defs/nonEmptyString" },
+        "description": { "$ref": "#/$defs/nonEmptyString" }
+      },
+      "anyOf": [
+        { "required": ["icon"] },
+        { "required": ["emoji"] }
+      ],
+      "additionalProperties": true
+    },
+    "currencyImpact": {
+      "type": "object",
+      "required": ["code", "direction"],
+      "properties": {
+        "code": { "$ref": "#/$defs/currencyCode" },
+        "direction": { "enum": ["up", "down", "unclear"] }
+      },
+      "additionalProperties": true
+    },
+    "source": {
+      "type": "object",
+      "required": ["name", "url"],
+      "properties": {
+        "name": { "$ref": "#/$defs/nonEmptyString" },
+        "url": { "$ref": "#/$defs/httpsUrl" }
+      },
+      "additionalProperties": true
+    },
+    "feedItem": {
+      "type": "object",
+      "required": [
+        "id",
+        "category",
+        "headline",
+        "summary",
+        "whyItMatters",
+        "currencies",
+        "impact",
+        "fxRelevance",
+        "region",
+        "topics",
+        "tags",
+        "source",
+        "publishedAt",
+        "imageUrl"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/itemId" },
+        "category": { "enum": ["world", "central-banks", "fx-analysis", "markets", "life"] },
+        "headline": { "type": "string", "minLength": 1, "maxLength": 90 },
+        "summary": { "$ref": "#/$defs/nonEmptyString" },
+        "whyItMatters": { "$ref": "#/$defs/nonEmptyString" },
+        "currencies": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/currencyCode" }
+        },
+        "impact": { "enum": ["bullish", "bearish", "neutral", "mixed"] },
+        "currencyImpacts": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/currencyImpact" }
+        },
+        "fxDriver": {
+          "enum": [
+            "rate-decision",
+            "intervention",
+            "economic-data",
+            "geopolitics",
+            "commodity",
+            "capital-flows",
+            "policy-commentary",
+            "other"
+          ]
+        },
+        "fxRelevance": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "region": { "$ref": "#/$defs/nonEmptyString" },
+        "topics": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" }
+        },
+        "countries": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/countryCode" }
+        },
+        "tags": {
+          "type": "array",
+          "maxItems": 4,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/nonEmptyString" }
+        },
+        "source": { "$ref": "#/$defs/source" },
+        "publishedAt": { "type": "string", "format": "date-time" },
+        "imageUrl": {
+          "anyOf": [
+            { "$ref": "#/$defs/legacyHttpsUrl" },
+            { "type": "null" }
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "currencyOutlook": {
+      "type": "object",
+      "required": ["code", "net", "signals"],
+      "properties": {
+        "code": { "$ref": "#/$defs/currencyCode" },
+        "net": { "enum": ["up", "down", "mixed"] },
+        "signals": { "type": "integer", "minimum": 1 }
+      },
+      "additionalProperties": true
+    },
+    "currencyView": {
+      "type": "object",
+      "required": ["code", "bias", "conviction", "summary", "drivers", "analystForecasts"],
+      "properties": {
+        "code": { "$ref": "#/$defs/currencyCode" },
+        "bias": { "enum": ["strengthening", "weakening", "range-bound", "mixed"] },
+        "conviction": { "enum": ["low", "medium", "high"] },
+        "summary": { "$ref": "#/$defs/nonEmptyString" },
+        "drivers": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/nonEmptyString" }
+        },
+        "analystForecasts": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/nonEmptyString" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "fxRate": {
+      "type": "object",
+      "required": ["pair", "rate", "source", "ts"],
+      "properties": {
+        "pair": { "type": "string", "pattern": "^[A-Z]{3}/[A-Z]{3}$" },
+        "rate": { "type": "number", "exclusiveMinimum": 0 },
+        "source": { "enum": ["wise", "reference"] },
+        "ts": { "type": "number", "minimum": 0 }
+      },
+      "additionalProperties": true
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "@sera/feed-public",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Validation tooling for the published Sera feed artifacts",
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "validate": "node scripts/validate-feed.mjs",
+    "check": "npm test && npm run validate"
+  },
+  "devDependencies": {
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1"
+  }
+}

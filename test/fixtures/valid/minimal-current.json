@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "date": "2026-08-19",
+  "generatedAt": "2026-08-19T04:00:00.000Z",
+  "enrichment": "ai",
+  "sentiment": {
+    "score": 20,
+    "label": "risk-on",
+    "summary": "Positive currency signals outweigh negative signals.",
+    "basis": 1
+  },
+  "brief": null,
+  "categories": [
+    {
+      "id": "world",
+      "label": "World News",
+      "priority": 1,
+      "icon": "globe",
+      "description": "Global events moving currencies."
+    }
+  ],
+  "items": [
+    {
+      "id": "0123456789ab",
+      "category": "world",
+      "headline": "Dollar strengthens after the latest policy signal",
+      "summary": "Markets moved after a clear policy signal.",
+      "whyItMatters": "The signal supports the dollar against major peers.",
+      "currencies": ["USD"],
+      "impact": "bullish",
+      "currencyImpacts": [
+        { "code": "USD", "direction": "up" }
+      ],
+      "fxDriver": "policy-commentary",
+      "fxRelevance": 80,
+      "region": "Global",
+      "topics": ["fx", "economics"],
+      "countries": ["US"],
+      "tags": ["dollar", "policy"],
+      "source": {
+        "name": "Example News",
+        "url": "https://example.com/dollar-policy"
+      },
+      "publishedAt": "2026-08-19T03:00:00.000Z",
+      "imageUrl": null
+    }
+  ],
+  "alerts": ["0123456789ab"],
+  "currencyOutlook": [
+    { "code": "USD", "net": "up", "signals": 1 }
+  ],
+  "currencyViews": [],
+  "rates": [
+    { "pair": "USD/EUR", "rate": 0.9, "source": "wise", "ts": 0 }
+  ]
+}
